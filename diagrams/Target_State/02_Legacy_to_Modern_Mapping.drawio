@@ -1,0 +1,9 @@
+Legacy Layer
+────────────
+VRCB0100 ─────────► Customer API ─────────► Customer Service
+VRCB0200 ─────────► Account API ──────────► Account Service
+VRCB0300 ─────────► Deposit API ──────────► Transaction Service
+VRCB0310 ─────────► Withdrawal API ───────► Transaction Service
+VRCB0400 ─────────► Transfer API ─────────► Transfer Service
+VRCB0500 ─────────► Statement API ────────► Inquiry Service
+VRCB0900 ─────────► Batch Service ────────► Container Scheduler

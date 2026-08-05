@@ -1,0 +1,16 @@
+                External Clients
+        ┌──────────┬───────────┬──────────┐
+        │          │           │          │
+      Mobile      Web      Internal    Partner
+        │          │           │          │
+        └──────────┴───────────┴──────────┘
+                     │
+               API Gateway
+                     │
+          Spring Boot REST APIs
+                     │
+             Legacy Adapter Layer
+                     │
+               COBOL Programs
+                     │
+              Indexed File Storage
