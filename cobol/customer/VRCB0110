@@ -1,0 +1,138 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VRCB0110.
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+
+       COPY VRCP9001.
+
+       LINKAGE SECTION.
+
+       COPY VRCP0101.
+
+       COPY VRCP9002.
+
+       PROCEDURE DIVISION
+           USING CUSTOMER-RECORD
+                 VALIDATION-RESULT.
+
+       1000-MAIN.
+
+           PERFORM 2000-INITIALIZE
+
+           PERFORM 3000-VALIDATE-CUSTOMER
+
+           GOBACK.
+
+       2000-INITIALIZE.
+
+           MOVE 00 TO VALIDATION-RETURN-CODE
+
+           MOVE SPACES TO VALIDATION-RETURN-MESSAGE.
+
+       3000-VALIDATE-CUSTOMER.
+
+           PERFORM 3100-VALIDATE-ID
+
+           IF VALIDATION-RETURN-CODE NOT = 00
+              GOBACK
+           END-IF
+
+           PERFORM 3200-VALIDATE-FIRST-NAME
+
+           IF VALIDATION-RETURN-CODE NOT = 00
+              GOBACK
+           END-IF
+
+           PERFORM 3300-VALIDATE-LAST-NAME
+
+           IF VALIDATION-RETURN-CODE NOT = 00
+              GOBACK
+           END-IF
+
+           PERFORM 3400-VALIDATE-CUSTOMER-TYPE
+
+           IF VALIDATION-RETURN-CODE NOT = 00
+              GOBACK
+           END-IF
+
+           PERFORM 3500-VALIDATE-GENDER
+
+           IF VALIDATION-RETURN-CODE NOT = 00
+              GOBACK
+           END-IF
+
+           PERFORM 3600-VALIDATE-BRANCH.
+
+       3100-VALIDATE-ID.
+
+           IF CUSTOMER-ID = SPACES
+
+              MOVE 01 TO VALIDATION-RETURN-CODE
+
+              MOVE "Customer ID is mandatory"
+                TO VALIDATION-RETURN-MESSAGE
+
+           END-IF.
+
+       3200-VALIDATE-FIRST-NAME.
+
+           IF CUSTOMER-FIRST-NAME = SPACES
+
+              MOVE 02 TO VALIDATION-RETURN-CODE
+
+              MOVE "First Name is mandatory"
+                TO VALIDATION-RETURN-MESSAGE
+
+           END-IF.
+
+       3300-VALIDATE-LAST-NAME.
+
+           IF CUSTOMER-LAST-NAME = SPACES
+
+              MOVE 03 TO VALIDATION-RETURN-CODE
+
+              MOVE "Last Name is mandatory"
+                TO VALIDATION-RETURN-MESSAGE
+
+           END-IF.
+
+       3400-VALIDATE-CUSTOMER-TYPE.
+
+           IF CUSTOMER-TYPE NOT = CUSTOMER-TYPE-INDIVIDUAL
+              AND CUSTOMER-TYPE NOT = CUSTOMER-TYPE-NRI
+              AND CUSTOMER-TYPE NOT = CUSTOMER-TYPE-CORPORATE
+
+              MOVE 04 TO VALIDATION-RETURN-CODE
+
+              MOVE "Invalid Customer Type"
+                TO VALIDATION-RETURN-MESSAGE
+
+           END-IF.
+
+       3500-VALIDATE-GENDER.
+
+           IF CUSTOMER-GENDER NOT = GENDER-MALE
+              AND CUSTOMER-GENDER NOT = GENDER-FEMALE
+              AND CUSTOMER-GENDER NOT = GENDER-OTHER
+
+              MOVE 05 TO VALIDATION-RETURN-CODE
+
+              MOVE "Invalid Gender"
+                TO VALIDATION-RETURN-MESSAGE
+
+           END-IF.
+
+       3600-VALIDATE-BRANCH.
+
+           IF CUSTOMER-HOME-BRANCH-CODE = SPACES
+
+              MOVE 06 TO VALIDATION-RETURN-CODE
+
+              MOVE "Home Branch is mandatory"
+                TO VALIDATION-RETURN-MESSAGE
+
+           END-IF.
