@@ -1,0 +1,130 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VRCB0110.
+
+      *****************************************************************
+      * PROJECT      : Project Phoenix
+      * CLIENT       : VRUT Bank
+      * PROGRAM      : VRCB0110
+      * DESCRIPTION  : Customer Validation
+      *
+      * PURPOSE
+      * Validate customer information before persistence.
+      *
+      * INPUT
+      *    CUSTOMER-RECORD
+      *
+      * OUTPUT
+      *    VALIDATION-RESULT
+      *
+      * CALLED BY
+      *    VRCB0100
+      *****************************************************************
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+
+       COPY VRCP9001.
+
+       LINKAGE SECTION.
+
+       COPY VRCP0101.
+
+       COPY VRCP9002.
+
+       PROCEDURE DIVISION
+           USING
+               CUSTOMER-RECORD
+               VALIDATION-RESULT.
+
+       1000-MAIN.
+
+           PERFORM 2000-INITIALIZE
+
+           PERFORM 3000-VALIDATE-CUSTOMER
+
+           GOBACK.
+
+       2000-INITIALIZE.
+
+           MOVE ZERO TO VALIDATION-RETURN-CODE.
+
+       3000-VALIDATE-CUSTOMER.
+
+           PERFORM 3100-VALIDATE-FIRST-NAME
+
+           IF VALIDATION-RETURN-CODE NOT = ZERO
+              EXIT PARAGRAPH
+           END-IF
+
+           PERFORM 3200-VALIDATE-LAST-NAME
+
+           IF VALIDATION-RETURN-CODE NOT = ZERO
+              EXIT PARAGRAPH
+           END-IF
+
+           PERFORM 3300-VALIDATE-CUSTOMER-TYPE
+
+           IF VALIDATION-RETURN-CODE NOT = ZERO
+              EXIT PARAGRAPH
+           END-IF
+
+           PERFORM 3400-VALIDATE-GENDER
+
+           IF VALIDATION-RETURN-CODE NOT = ZERO
+              EXIT PARAGRAPH
+           END-IF
+
+           PERFORM 3500-VALIDATE-STATUS
+
+           IF VALIDATION-RETURN-CODE NOT = ZERO
+              EXIT PARAGRAPH
+           END-IF
+
+           PERFORM 3600-VALIDATE-BRANCH.
+
+       3100-VALIDATE-FIRST-NAME.
+
+           IF CUSTOMER-FIRST-NAME = SPACES
+              MOVE 01 TO VALIDATION-RETURN-CODE
+           END-IF.
+
+       3200-VALIDATE-LAST-NAME.
+
+           IF CUSTOMER-LAST-NAME = SPACES
+              MOVE 02 TO VALIDATION-RETURN-CODE
+           END-IF.
+
+       3300-VALIDATE-CUSTOMER-TYPE.
+
+           IF CUSTOMER-TYPE NOT = CUSTOMER-TYPE-INDIVIDUAL
+              AND CUSTOMER-TYPE NOT = CUSTOMER-TYPE-NRI
+              AND CUSTOMER-TYPE NOT = CUSTOMER-TYPE-CORPORATE
+              MOVE 03 TO VALIDATION-RETURN-CODE
+           END-IF.
+
+       3400-VALIDATE-GENDER.
+
+           IF CUSTOMER-GENDER NOT = GENDER-MALE
+              AND CUSTOMER-GENDER NOT = GENDER-FEMALE
+              AND CUSTOMER-GENDER NOT = GENDER-OTHER
+              MOVE 04 TO VALIDATION-RETURN-CODE
+           END-IF.
+
+       3500-VALIDATE-STATUS.
+
+           IF CUSTOMER-STATUS NOT = STATUS-ACTIVE
+              AND CUSTOMER-STATUS NOT = STATUS-INACTIVE
+              AND CUSTOMER-STATUS NOT = STATUS-DORMANT
+              AND CUSTOMER-STATUS NOT = STATUS-BLOCKED
+              AND CUSTOMER-STATUS NOT = STATUS-CLOSED
+              MOVE 05 TO VALIDATION-RETURN-CODE
+           END-IF.
+
+       3600-VALIDATE-BRANCH.
+
+           IF CUSTOMER-HOME-BRANCH-CODE = SPACES
+              MOVE 06 TO VALIDATION-RETURN-CODE
+           END-IF.

@@ -36,6 +36,7 @@ Legacy Program	Business Function	Phase 1	Future State	Strategy
 VRCB0001	Main Menu	Retain	Navigation Layer	Retain
 VRCB0100	Customer Maintenance	REST Wrapper	Customer Service	Wrap → Replace
 VRCB0110	Customer Validation	Internal API	Validation Service	Wrap
+VRCB0130.   CustomerRepository
 VRCB0200	Account Maintenance	REST Wrapper	Account Service	Wrap → Replace
 VRCB0210	Balance Inquiry	REST Wrapper	Inquiry Service	Wrap
 VRCB0300	Deposit	REST Wrapper	Transaction Service	Wrap
