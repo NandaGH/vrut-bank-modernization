@@ -1,0 +1,38 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VRCUSTM-INIT.
+
+       ENVIRONMENT DIVISION.
+
+       INPUT-OUTPUT SECTION.
+
+       FILE-CONTROL.
+
+           SELECT CUSTOMER-FILE
+               ASSIGN TO "test-data/VRCUSTM.dat"
+               ORGANIZATION IS INDEXED
+               ACCESS MODE IS DYNAMIC
+               RECORD KEY IS CUSTOMER-ID
+               FILE STATUS IS WS-FILE-STATUS.
+
+       DATA DIVISION.
+
+       FILE SECTION.
+
+       FD CUSTOMER-FILE.
+
+       COPY VRCP0101.
+
+       WORKING-STORAGE SECTION.
+
+       01 WS-FILE-STATUS              PIC XX.
+
+       PROCEDURE DIVISION.
+
+           OPEN OUTPUT CUSTOMER-FILE
+
+           DISPLAY "CUSTOMER FILE STATUS : "
+                   WS-FILE-STATUS
+
+           CLOSE CUSTOMER-FILE
+
+           GOBACK.

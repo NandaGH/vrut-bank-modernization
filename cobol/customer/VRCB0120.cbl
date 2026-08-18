@@ -7,7 +7,7 @@
 
        FILE-CONTROL.
 
-           SELECT SEQUENCE-FILE
+              SELECT SEQUENCE-FILE
                ASSIGN TO "test-data/VRSEQM.dat"
                ORGANIZATION IS INDEXED
                ACCESS MODE IS DYNAMIC
@@ -20,7 +20,7 @@
 
        FD  SEQUENCE-FILE.
 
-       COPY VRCP9004.
+           COPY VRCP9004.
 
        WORKING-STORAGE SECTION.
 
@@ -39,6 +39,13 @@
        1000-MAIN.
 
            OPEN I-O SEQUENCE-FILE
+           IF WS-FILE-STATUS = "35"
+              PERFORM 1100-CREATE-SEQUENCE-FILE
+           END-IF
+
+           IF WS-FILE-STATUS NOT = "00"
+              GO TO 9000-TERMINATE
+           END-IF
 
            PERFORM 2000-READ-SEQUENCE
 
@@ -48,20 +55,73 @@
 
            CLOSE SEQUENCE-FILE
 
-           GOBACK.
+       GOBACK.
+
+       1100-CREATE-SEQUENCE-FILE.
+
+           CLOSE SEQUENCE-FILE
+
+           OPEN OUTPUT SEQUENCE-FILE
+
+           IF WS-FILE-STATUS NOT = "00"
+              GO TO 9000-TERMINATE
+           END-IF
+
+              MOVE LK-SEQUENCE-TYPE
+                TO SEQUENCE-TYPE
+
+              MOVE 1
+                TO NEXT-NUMBER
+
+           WRITE VRSEQM-REC
+
+           CLOSE SEQUENCE-FILE
+
+           OPEN I-O SEQUENCE-FILE.
 
        2000-READ-SEQUENCE.
 
-      * READ SEQUENCE RECORD
+           MOVE LK-SEQUENCE-TYPE
+             TO SEQUENCE-TYPE
+
+           READ SEQUENCE-FILE
+                INVALID KEY
+                CONTINUE
+           END-READ.
+
 
        3000-INCREMENT-SEQUENCE.
 
-      * MOVE CURRENT VALUE
+           IF WS-FILE-STATUS = "23"
+              MOVE 1
+                TO NEXT-NUMBER
+           END-IF
 
-      * ADD 1
+           MOVE NEXT-NUMBER
+             TO LK-GENERATED-NUMBER
 
-      * RETURN GENERATED VALUE
+           ADD 1
+           TO NEXT-NUMBER.
+
 
        4000-UPDATE-SEQUENCE.
 
-      * REWRITE UPDATED RECORD
+           IF WS-FILE-STATUS = "23"
+               WRITE VRSEQM-REC
+                INVALID KEY
+                    CONTINUE
+               END-WRITE
+           ELSE
+               REWRITE VRSEQM-REC
+                       INVALID KEY
+                       CONTINUE
+               END-REWRITE
+           END-IF.
+
+       9000-TERMINATE.
+
+           IF WS-FILE-STATUS = "00"
+              CLOSE SEQUENCE-FILE
+           END-IF
+
+           GOBACK.

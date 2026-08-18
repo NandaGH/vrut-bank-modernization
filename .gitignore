@@ -1,1 +1,14 @@
 .DS_Store
+
+# COBOL build artifacts
+*.so
+VRCB0120-TEST
+VRCB0120
+
+# Runtime test data
+test-data/VRSEQM.dat
+
+# Sprint 1 test executables
+VRCB0100-TEST
+VRCUSTM-INIT
+VRCUSTM-READBACK-TEST
