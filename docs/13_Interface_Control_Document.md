@@ -85,30 +85,82 @@ BRANCH	X(4)	4
 We intentionally keep dates as character strings (YYYY-MM-DD) in Phase 1 to simplify adapter logic. We can introduce native date handling later if needed.
 
 COBOL Output Layout
-Field	PIC
-RETURN-CODE	9(02)
-RETURN-MESSAGE	X(50)
+Field              PIC
+RETURN-CODE        9(02)
+SEVERITY           X(01)
+ERROR-CODE         X(12)
+RETURN-MESSAGE     X(50)
+
+Return Code
+00 = Successful processing
+01 = Validation/business failure
+99 = Unexpected system failure
+
+Severity
+S = SUCCESS
+W = WARNING
+E = ERROR
+
+VSAM / File Status
+
+VSAM file status is an internal COBOL I/O status and must not be
+exposed directly to cross-platform consumers.
+
+Field
+WS-FILE-STATUS
+
+PIC
+X(02)
+
+Examples
+00 = Successful I/O
+23 = Record/key not found
+35 = File not found
+
+Application Return Status
+
+Application return status is the business/application outcome returned
+by the COBOL program through the enterprise operation result interface.
+
+Field
+OPERATION-RETURN-CODE
+
+PIC
+9(02)
+
+Examples
+00 = Successful processing
+01 = Business/validation failure
+99 = Unexpected system failure
+
+The application layer translates relevant VSAM/file statuses into
+appropriate application return codes and enterprise error codes.
+
 Validation Rules
 Rule	Description
+
 Customer ID	Mandatory and unique
 First Name	Mandatory
 Last Name	Mandatory
 Mobile	Exactly 10 digits
 Email	Valid email format
 Branch Code	Must exist in branch master
+
 Business Errors
-Code	Description
-VR001	Customer already exists
-VR002	Invalid branch
-VR003	Invalid mobile number
-VR004	Mandatory field missing
+
+Error Code       Description
+VR-CUST-001      Customer already exists
+VR-CUST-002      Invalid branch
+VR-CUST-003      Invalid mobile number
+VR-CUST-004      Mandatory field missing
+VR-CUST-999      Unexpected customer processing error
+
 HTTP Mapping
-COBOL Return	HTTP	Meaning
-00	201 Created	Success
-01	400 Bad Request	Validation error
-02	404 Not Found	Branch not found
-03	409 Conflict	Duplicate customer
-99	500 Internal Server Error	Unexpected failure
+COBOL Return Code    Severity    HTTP    Meaning
+00                   S           201     Created / Success
+01                   E           400     Validation / Business Error
+99                   E           500     Unexpected System Error
+
 Logging Requirements
 
 Each request logs:

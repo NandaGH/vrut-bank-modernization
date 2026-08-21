@@ -247,11 +247,38 @@ VR-ACCT-001
 
 VR-TRAN-001
 
+Error Result Structure
+
+Return Code
+Technical processing outcome.
+
+Severity
+S = SUCCESS
+W = WARNING
+E = ERROR
+
+Error Code
+Enterprise business error identifier.
+
+Message
+Human-readable error or warning description.
+
 Instead of generic
 
 Error 12
 
 This also maps cleanly into REST responses.
+
+Message Repository
+
+Phase 1:
+Common COBOL message definitions.
+
+Future:
+Database-backed message repository such as DB2 or PostgreSQL.
+
+The calling program must use the logical error-code and message
+contract independently of the physical message repository.
 
 10. Git Standards
 
@@ -375,4 +402,27 @@ No unnecessary complexity introduced.
 |----------|----------|
 | VRCP9001 | Enterprise Constants |
 | VRCP9002 | Enterprise Return Codes |
-| VRCP9003 | Common Audit Fields |
+| VRCP9003 | Enterprise Operation Result |
+
+Copybook Namespace Standard
+
+Reusable COBOL copybooks must use a neutral CP- template prefix
+where contextual reuse is required.
+
+Approved contextual prefixes include:
+
+FD-  File Definition
+LK-  Linkage Interface
+WS-  Working Storage
+
+COPY REPLACING with explicit CP- data-name replacement pairs must
+be used when contextualizing reusable copybook structures.
+
+Partial prefix substitution must not be used as the contextualization
+mechanism.
+
+The contextual prefix is an implementation-level namespace and is
+not part of the enterprise API contract.
+
+This standard supports reuse, qualification, maintainability, and
+cross-platform transformation.
