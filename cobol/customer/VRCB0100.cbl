@@ -73,6 +73,7 @@
 
        01 WS-SEQUENCE-TYPE            PIC X(10).
        01 WS-GENERATED-NUMBER         PIC 9(10).
+       01 WS-MESSAGE-CODE             PIC X(12).
 
        COPY VRCP9002.
 
@@ -141,15 +142,14 @@
 
            PERFORM 3000-VALIDATE-CUSTOMER
 
-             IF VALIDATION-RETURN-CODE = ZERO
-
-              PERFORM 4000-GENERATE-CUSTOMER-ID
-
-              PERFORM 5000-CHECK-DUPLICATE
-
-              PERFORM 6000-WRITE-CUSTOMER
+           IF VALIDATION-RETURN-CODE NOT = ZERO
+               PERFORM 3500-SET-VALIDATION-ERROR
+           ELSE
+               PERFORM 4000-GENERATE-CUSTOMER-ID
+               PERFORM 5000-CHECK-DUPLICATE
+               PERFORM 6000-WRITE-CUSTOMER
            END-IF
-           
+
            PERFORM 9000-TERMINATE
 
                MOVE FD-CUSTOMER-RECORD
@@ -174,6 +174,33 @@
       * Duplicate Check        - Next Version
       * Customer Write         - Next Version
        
+       3500-SET-VALIDATION-ERROR.
+
+           MOVE "VR-CUST-999"
+             TO WS-MESSAGE-CODE
+
+           EVALUATE VALIDATION-RETURN-CODE
+               WHEN 01
+                   MOVE "VR-CUST-004"
+                     TO WS-MESSAGE-CODE
+               WHEN 02
+                   MOVE "VR-CUST-004"
+                     TO WS-MESSAGE-CODE
+               WHEN 06
+                   MOVE "VR-CUST-002"
+                     TO WS-MESSAGE-CODE
+           END-EVALUATE
+
+           CALL "VRCB9005"
+                USING WS-MESSAGE-CODE
+                      LK-OPERATION-RESULT
+
+           MOVE 01
+             TO OPERATION-RETURN-CODE
+
+           MOVE "E"
+             TO OPERATION-SEVERITY.
+
        4000-GENERATE-CUSTOMER-ID.
 
            CALL "VRCB0120"
