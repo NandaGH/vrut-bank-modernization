@@ -38,11 +38,12 @@
            DISPLAY "Message      : "
                    OPERATION-RETURN-MESSAGE
 
-           IF OPERATION-RETURN-CODE = 01
-               AND OPERATION-ERROR-CODE = "VR-COM-002"
-               DISPLAY "MESSAGE LOOKUP ERROR PATH : PASS"
+           IF OPERATION-RETURN-CODE = 00
+               AND OPERATION-ERROR-CODE = "VR-CUST-001"
+               AND OPERATION-RETURN-MESSAGE = "Customer already exists"
+               DISPLAY "MESSAGE LOOKUP SUCCESS PATH : PASS"
            ELSE
-               DISPLAY "MESSAGE LOOKUP ERROR PATH : FAIL"
+               DISPLAY "MESSAGE LOOKUP SUCCESS PATH : FAIL"
            END-IF
 
            DISPLAY "========================================"
