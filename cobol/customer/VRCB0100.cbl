@@ -145,9 +145,15 @@
            IF VALIDATION-RETURN-CODE NOT = ZERO
                PERFORM 3500-SET-VALIDATION-ERROR
            ELSE
-               PERFORM 4000-GENERATE-CUSTOMER-ID
+               MOVE 1
+                 TO FD-CUSTOMER-ID IN FD-CUSTOMER-RECORD
+
                PERFORM 5000-CHECK-DUPLICATE
-               PERFORM 6000-WRITE-CUSTOMER
+
+               IF OPERATION-RETURN-CODE = ZERO
+                   PERFORM 4000-GENERATE-CUSTOMER-ID
+                   PERFORM 6000-WRITE-CUSTOMER
+               END-IF
            END-IF
 
            PERFORM 9000-TERMINATE
@@ -212,12 +218,26 @@
 
        5000-CHECK-DUPLICATE.
 
+
+
            READ CUSTOMER-FILE
                INVALID KEY
                    CONTINUE
+
                NOT INVALID KEY
-      * Duplicate Customer ID
-                   CONTINUE
+
+                   MOVE "VR-CUST-001"
+                     TO WS-MESSAGE-CODE
+
+                   CALL "VRCB9005"
+                        USING WS-MESSAGE-CODE
+                              LK-OPERATION-RESULT
+
+                   MOVE 01
+                     TO OPERATION-RETURN-CODE
+
+                   MOVE "E"
+                     TO OPERATION-SEVERITY
            END-READ.
 
        6000-WRITE-CUSTOMER.
