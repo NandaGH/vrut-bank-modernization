@@ -1,0 +1,119 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VRCB0100-VALIDATION-TEST.
+
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+
+       COPY VRCP0101
+           REPLACING
+               CP-CUSTOMER-RECORD BY WS-CUSTOMER-RECORD
+               CP-CUSTOMER-IDENTITY BY WS-CUSTOMER-IDENTITY
+               CP-CUSTOMER-ID BY WS-CUSTOMER-ID
+               CP-CUSTOMER-TYPE BY WS-CUSTOMER-TYPE
+               CP-CUSTOMER-TITLE BY WS-CUSTOMER-TITLE
+               CP-CUSTOMER-FIRST-NAME BY WS-CUSTOMER-FIRST-NAME
+               CP-CUSTOMER-MIDDLE-NAME BY WS-CUSTOMER-MIDDLE-NAME
+               CP-CUSTOMER-LAST-NAME BY WS-CUSTOMER-LAST-NAME
+               CP-CUSTOMER-GENDER BY WS-CUSTOMER-GENDER
+               CP-CUSTOMER-DATE-OF-BIRTH BY WS-CUSTOMER-DATE-OF-BIRTH
+               CP-CUSTOMER-CONTACT BY WS-CUSTOMER-CONTACT
+               CP-CUSTOMER-MOBILE-NUMBER BY WS-CUSTOMER-MOBILE-NUMBER
+               CP-CUSTOMER-EMAIL-ID BY WS-CUSTOMER-EMAIL-ID
+               CP-CUSTOMER-ADDRESS BY WS-CUSTOMER-ADDRESS
+               CP-CUSTOMER-ADDRESS-LINE-1 BY WS-CUSTOMER-ADDRESS-LINE-1
+               CP-CUSTOMER-ADDRESS-LINE-2 BY WS-CUSTOMER-ADDRESS-LINE-2
+               CP-CUSTOMER-CITY BY WS-CUSTOMER-CITY
+               CP-CUSTOMER-STATE BY WS-CUSTOMER-STATE
+               CP-CUSTOMER-PINCODE BY WS-CUSTOMER-PINCODE
+               CP-CUSTOMER-COUNTRY BY WS-CUSTOMER-COUNTRY
+               CP-CUSTOMER-BANK BY WS-CUSTOMER-BANK
+               CP-CUSTOMER-HOME-BRANCH BY WS-CUSTOMER-HOME-BRANCH
+               CP-CUSTOMER-STATUS BY WS-CUSTOMER-STATUS
+               CP-CUSTOMER-ACTIVE BY WS-CUSTOMER-ACTIVE
+               CP-CUSTOMER-INACTIVE BY WS-CUSTOMER-INACTIVE
+               CP-CUSTOMER-DORMANT BY WS-CUSTOMER-DORMANT
+               CP-CUSTOMER-BLOCKED BY WS-CUSTOMER-BLOCKED
+               CP-CUSTOMER-CLOSED BY WS-CUSTOMER-CLOSED
+               CP-CUSTOMER-AUDIT BY WS-CUSTOMER-AUDIT
+               CP-CUSTOMER-CREATED-DATE BY WS-CUSTOMER-CREATED-DATE
+               CP-CUSTOMER-CREATED-BY BY WS-CUSTOMER-CREATED-BY
+               CP-CUSTOMER-LAST-UPD-DATE BY WS-CUSTOMER-LAST-UPD-DATE
+               CP-CUSTOMER-LAST-UPD-BY BY WS-CUSTOMER-LAST-UPD-BY.
+
+       COPY VRCP9003.
+
+       PROCEDURE DIVISION.
+
+       1000-MAIN.
+
+           MOVE SPACES
+             TO WS-CUSTOMER-RECORD
+
+           MOVE "IN"
+             TO WS-CUSTOMER-TYPE
+
+           MOVE "MR"
+             TO WS-CUSTOMER-TITLE
+
+           MOVE SPACES
+             TO WS-CUSTOMER-FIRST-NAME
+
+           MOVE "KUMAR"
+             TO WS-CUSTOMER-LAST-NAME
+
+           MOVE "M"
+             TO WS-CUSTOMER-GENDER
+
+           MOVE "1990-01-15"
+             TO WS-CUSTOMER-DATE-OF-BIRTH
+
+           MOVE "9876543210"
+             TO WS-CUSTOMER-MOBILE-NUMBER
+
+           MOVE "arun.kumar@example.com"
+             TO WS-CUSTOMER-EMAIL-ID
+
+           MOVE "1001"
+             TO WS-CUSTOMER-HOME-BRANCH
+
+           MOVE "A"
+             TO WS-CUSTOMER-STATUS
+
+           DISPLAY "========================================"
+           DISPLAY " VRCB0100 VALIDATION ERROR TEST"
+           DISPLAY "========================================"
+
+           DISPLAY "Invalid Field   : FIRST NAME"
+           DISPLAY "Expected Code   : 01"
+           DISPLAY "Expected Error  : VR-CUST-004"
+
+           CALL "VRCB0100"
+                USING WS-CUSTOMER-RECORD
+                      OPERATION-RESULT
+
+           DISPLAY "Return Code     : "
+                   OPERATION-RETURN-CODE
+
+           DISPLAY "Severity        : "
+                   OPERATION-SEVERITY
+
+           DISPLAY "Error Code      : "
+                   OPERATION-ERROR-CODE
+
+           DISPLAY "Message         : "
+                   OPERATION-RETURN-MESSAGE
+
+           IF OPERATION-RETURN-CODE = 01
+               AND OPERATION-SEVERITY = "E"
+               AND OPERATION-ERROR-CODE = "VR-CUST-004"
+               AND OPERATION-RETURN-MESSAGE =
+                   "Mandatory field missing"
+               DISPLAY "VALIDATION ERROR PATH : PASS"
+           ELSE
+               DISPLAY "VALIDATION ERROR PATH : FAIL"
+           END-IF
+
+           DISPLAY "========================================"
+
+           GOBACK.
