@@ -34,13 +34,40 @@ So that only valid records are stored.
 
 ## Sprint 2 - Customer Add
 
-Status: 🟢 Not Started
+Status: ✅ Complete
+
+### User Story
+
+As a Customer Maintenance program,
+I want to add a valid customer,
+So that the customer is validated, assigned an ID, checked for duplicates,
+persisted, and returned with a clear operation result.
+
+---
+
+### Tasks
+
+| ID | Task | Status |
+|----|------|--------|
+| S2-01 | Customer Add orchestration | ✅ |
+| S2-02 | Customer validation integration | ✅ |
+| S2-03 | Customer ID generation | ✅ |
+| S2-04 | Duplicate customer handling | ✅ |
+| S2-05 | Customer persistence | ✅ |
+| S2-06 | Enterprise error message integration | ✅ |
+| S2-07 | Success operation result | ✅ |
+| S2-08 | Customer Add integration test | ✅ |
+| S2-09 | Error-path test coverage | ✅ |
+| S2-10 | Update Sprint 2 documentation | ✅ |
+| S2-11 | Sprint 2 acceptance review | ✅ |
+| S2-12 | Git Commit | ✅ |
+| S2-13 | Git Push | ✅ |
 
 ---
 
 ## Sprint 3 - Customer Inquiry
 
-Status: 🔒 Not Started
+Status: 🟡 In Progress
 
 ---
 
