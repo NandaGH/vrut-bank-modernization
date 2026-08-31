@@ -258,9 +258,17 @@
                      TO OPERATION-SEVERITY
 
                NOT INVALID KEY
-                   CONTINUE
-           END-WRITE.
+                   MOVE ZERO
+                     TO OPERATION-RETURN-CODE
 
+                   MOVE "S"
+                     TO OPERATION-SEVERITY
+
+                   MOVE SPACES
+                     TO OPERATION-ERROR-CODE
+                        OPERATION-RETURN-MESSAGE
+           END-WRITE.
+           
        9000-TERMINATE.
 
            CLOSE CUSTOMER-FILE.
