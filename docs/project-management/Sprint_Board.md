@@ -131,10 +131,36 @@ So that validated customer information can be changed and persisted safely.
 
 ## Sprint 5 - CICS Customer Add
 
-Status: 🟡 In Progress
+Status: ✅ Complete
+
+### User Story
+
+As a CICS application,
+I want to invoke the existing Customer Add business logic through a transaction entry point,
+So that the legacy customer service can be exposed to an online CICS channel without changing its core business logic.
+
+---
+
+### Tasks
+
+| ID | Task | Status |
+|----|------|--------|
+| S5-01 | Analyze CICS customer-add entry flow | ✅ |
+| S5-02 | Define CICS transaction contract | ✅ |
+| S5-03 | Define COMMAREA interface | ✅ |
+| S5-04 | CICS-to-VRCB0100 invocation design | ✅ |
+| S5-05 | CICS error/result mapping | ✅ |
+| S5-06 | CICS entry-point implementation | 🔄 |
+| S5-07 | Local-compatible validation strategy | ✅ |
+| S5-08 | Customer Add CICS test design | ✅ |
+| S5-09 | CICS integration validation | ✅ |
+| S5-10 | Update Sprint 5 documentation | ✅ |
+| S5-11 | Sprint 5 acceptance review | ✅ |
+| S5-12 | Git Commit | ✅ |
+| S5-13 | Git Push | 🔄 |
 
 ---
 
 ## Sprint 6 - REST API Enablement
 
-Status: 🔒 Not Started
+Status: 🟡 In Progress
