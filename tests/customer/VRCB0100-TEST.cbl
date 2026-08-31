@@ -163,6 +163,13 @@
                DISPLAY "CUSTOMER ID GENERATION : FAIL"
            END-IF
 
+           IF OPERATION-RETURN-CODE = ZERO
+               AND OPERATION-SEVERITY = "S"
+                   DISPLAY "CUSTOMER ADD RESULT : PASS"
+           ELSE
+                   DISPLAY "CUSTOMER ADD RESULT : FAIL"
+           END-IF
+           
            PERFORM 2000-VERIFY-PERSISTENCE
 
            DISPLAY "========================================"
