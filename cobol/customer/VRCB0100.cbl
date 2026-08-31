@@ -74,6 +74,7 @@
        01 WS-SEQUENCE-TYPE            PIC X(10).
        01 WS-GENERATED-NUMBER         PIC 9(10).
        01 WS-MESSAGE-CODE             PIC X(12).
+       01 WS-INCOMING-CUSTOMER-ID     PIC X(10).
 
        COPY VRCP9002.
 
@@ -125,6 +126,9 @@
 
        1000-MAIN.
 
+           MOVE LK-CUSTOMER-ID
+             TO WS-INCOMING-CUSTOMER-ID
+
            MOVE LK-CUSTOMER-RECORD
              TO FD-CUSTOMER-RECORD
 
@@ -145,21 +149,25 @@
            IF VALIDATION-RETURN-CODE NOT = ZERO
                PERFORM 3500-SET-VALIDATION-ERROR
            ELSE
-               MOVE 1
-                 TO FD-CUSTOMER-ID IN FD-CUSTOMER-RECORD
+               IF WS-INCOMING-CUSTOMER-ID NOT = SPACES
+                   PERFORM 7000-UPDATE-CUSTOMER
+               ELSE
+                   MOVE 1
+                     TO FD-CUSTOMER-ID IN FD-CUSTOMER-RECORD
 
-               PERFORM 5000-CHECK-DUPLICATE
+                   PERFORM 5000-CHECK-DUPLICATE
 
-               IF OPERATION-RETURN-CODE = ZERO
-                   PERFORM 4000-GENERATE-CUSTOMER-ID
-                   PERFORM 6000-WRITE-CUSTOMER
+                   IF OPERATION-RETURN-CODE = ZERO
+                       PERFORM 4000-GENERATE-CUSTOMER-ID
+                       PERFORM 6000-WRITE-CUSTOMER
+                   END-IF
                END-IF
            END-IF
 
            PERFORM 9000-TERMINATE
 
-               MOVE FD-CUSTOMER-RECORD
-                 TO LK-CUSTOMER-RECORD
+           MOVE FD-CUSTOMER-RECORD
+             TO LK-CUSTOMER-RECORD
 
            GOBACK.
 
@@ -269,6 +277,61 @@
                         OPERATION-RETURN-MESSAGE
            END-WRITE.
            
+       7000-UPDATE-CUSTOMER.
+
+           MOVE WS-INCOMING-CUSTOMER-ID
+             TO FD-CUSTOMER-ID IN FD-CUSTOMER-RECORD
+
+           READ CUSTOMER-FILE
+               INVALID KEY
+                   MOVE "VR-CUST-005"
+                     TO WS-MESSAGE-CODE
+
+                   CALL "VRCB9005"
+                        USING WS-MESSAGE-CODE
+                              LK-OPERATION-RESULT
+
+                   MOVE 01
+                     TO OPERATION-RETURN-CODE
+
+                   MOVE "E"
+                     TO OPERATION-SEVERITY
+
+               NOT INVALID KEY
+                   MOVE LK-CUSTOMER-RECORD
+                     TO FD-CUSTOMER-RECORD
+
+                   MOVE WS-INCOMING-CUSTOMER-ID
+                     TO FD-CUSTOMER-ID IN FD-CUSTOMER-RECORD
+
+                   REWRITE FD-CUSTOMER-RECORD
+                       INVALID KEY
+                           MOVE "VR-CUST-999"
+                             TO WS-MESSAGE-CODE
+
+                           CALL "VRCB9005"
+                                USING WS-MESSAGE-CODE
+                                      LK-OPERATION-RESULT
+
+                           MOVE 01
+                             TO OPERATION-RETURN-CODE
+
+                           MOVE "E"
+                             TO OPERATION-SEVERITY
+
+                       NOT INVALID KEY
+                           MOVE ZERO
+                             TO OPERATION-RETURN-CODE
+
+                           MOVE "S"
+                             TO OPERATION-SEVERITY
+
+                           MOVE SPACES
+                             TO OPERATION-ERROR-CODE
+                                OPERATION-RETURN-MESSAGE
+                   END-REWRITE
+           END-READ.
+
        9000-TERMINATE.
 
            CLOSE CUSTOMER-FILE.

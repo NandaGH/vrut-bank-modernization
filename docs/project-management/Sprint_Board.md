@@ -98,7 +98,7 @@ So that existing customer information can be returned and missing customers are 
 
 ## Sprint 4 - Customer Update
 
-Status: 🟡 In Progress
+Status: ✅ Complete
 
 ### User Story
 
@@ -112,26 +112,26 @@ So that validated customer information can be changed and persisted safely.
 
 | ID | Task | Status |
 |----|------|--------|
-| S4-01 | Analyze customer update flow | ⏳ |
-| S4-02 | Customer update program | ⏳ |
-| S4-03 | Customer validation integration | ⏳ |
-| S4-04 | Existing customer verification | ⏳ |
-| S4-05 | Customer persistence update | ⏳ |
-| S4-06 | Enterprise error handling | ⏳ |
-| S4-07 | Success operation result | ⏳ |
-| S4-08 | Update success-path test | ⏳ |
-| S4-09 | Update error-path test | ⏳ |
-| S4-10 | Update Sprint 4 documentation | ⏳ |
-| S4-11 | Sprint 4 acceptance review | ⏳ |
-| S4-12 | Git Commit | ⏳ |
-| S4-13 | Git Push | ⏳ |
+| S4-01 | Analyze customer update flow | ✅ |
+| S4-02 | Customer update program | ✅ |
+| S4-03 | Customer validation integration | ✅ |
+| S4-04 | Existing customer verification | ✅ |
+| S4-05 | Customer persistence update | ✅ |
+| S4-06 | Enterprise error handling | ✅ |
+| S4-07 | Success operation result | ✅ |
+| S4-08 | Update success-path test | ✅ |
+| S4-09 | Update error-path test | ✅ |
+| S4-10 | Update Sprint 4 documentation | ✅ |
+| S4-11 | Sprint 4 acceptance review | ✅ |
+| S4-12 | Git Commit | ✅ |
+| S4-13 | Git Push | 🔄 |
 
 
 ---
 
 ## Sprint 5 - CICS Customer Add
 
-Status: 🔒 Not Started
+Status: 🟡 In Progress
 
 ---
 
