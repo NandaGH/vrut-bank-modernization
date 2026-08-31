@@ -244,7 +244,19 @@
 
            WRITE FD-CUSTOMER-RECORD
                INVALID KEY
-                   CONTINUE
+                   MOVE "VR-CUST-002"
+                     TO WS-MESSAGE-CODE
+
+                   CALL "VRCB9005"
+                        USING WS-MESSAGE-CODE
+                              LK-OPERATION-RESULT
+
+                   MOVE 01
+                     TO OPERATION-RETURN-CODE
+
+                   MOVE "E"
+                     TO OPERATION-SEVERITY
+
                NOT INVALID KEY
                    CONTINUE
            END-WRITE.
