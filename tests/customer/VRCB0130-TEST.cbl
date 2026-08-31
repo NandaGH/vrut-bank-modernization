@@ -1,0 +1,100 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VRCB0130-TEST.
+
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+
+       01 WS-INQUIRY-ID              PIC X(10).
+       
+       COPY VRCP0101
+           REPLACING
+               CP-CUSTOMER-RECORD BY WS-CUSTOMER-RECORD
+               CP-CUSTOMER-IDENTITY BY WS-CUSTOMER-IDENTITY
+               CP-CUSTOMER-ID BY WS-CUSTOMER-ID
+               CP-CUSTOMER-TYPE BY WS-CUSTOMER-TYPE
+               CP-CUSTOMER-TITLE BY WS-CUSTOMER-TITLE
+               CP-CUSTOMER-FIRST-NAME BY WS-CUSTOMER-FIRST-NAME
+               CP-CUSTOMER-MIDDLE-NAME BY WS-CUSTOMER-MIDDLE-NAME
+               CP-CUSTOMER-LAST-NAME BY WS-CUSTOMER-LAST-NAME
+               CP-CUSTOMER-GENDER BY WS-CUSTOMER-GENDER
+               CP-CUSTOMER-DATE-OF-BIRTH BY WS-CUSTOMER-DATE-OF-BIRTH
+               CP-CUSTOMER-CONTACT BY WS-CUSTOMER-CONTACT
+               CP-CUSTOMER-MOBILE-NUMBER BY WS-CUSTOMER-MOBILE-NUMBER
+               CP-CUSTOMER-EMAIL-ID BY WS-CUSTOMER-EMAIL-ID
+               CP-CUSTOMER-ADDRESS BY WS-CUSTOMER-ADDRESS
+               CP-CUSTOMER-ADDRESS-LINE-1 BY WS-CUSTOMER-ADDRESS-LINE-1
+               CP-CUSTOMER-ADDRESS-LINE-2 BY WS-CUSTOMER-ADDRESS-LINE-2
+               CP-CUSTOMER-CITY BY WS-CUSTOMER-CITY
+               CP-CUSTOMER-STATE BY WS-CUSTOMER-STATE
+               CP-CUSTOMER-PINCODE BY WS-CUSTOMER-PINCODE
+               CP-CUSTOMER-COUNTRY BY WS-CUSTOMER-COUNTRY
+               CP-CUSTOMER-BANK BY WS-CUSTOMER-BANK
+               CP-CUSTOMER-HOME-BRANCH BY WS-CUSTOMER-HOME-BRANCH
+               CP-CUSTOMER-STATUS BY WS-CUSTOMER-STATUS
+               CP-CUSTOMER-ACTIVE BY WS-CUSTOMER-ACTIVE
+               CP-CUSTOMER-INACTIVE BY WS-CUSTOMER-INACTIVE
+               CP-CUSTOMER-DORMANT BY WS-CUSTOMER-DORMANT
+               CP-CUSTOMER-BLOCKED BY WS-CUSTOMER-BLOCKED
+               CP-CUSTOMER-CLOSED BY WS-CUSTOMER-CLOSED
+               CP-CUSTOMER-AUDIT BY WS-CUSTOMER-AUDIT
+               CP-CUSTOMER-CREATED-DATE BY WS-CUSTOMER-CREATED-DATE
+               CP-CUSTOMER-CREATED-BY BY WS-CUSTOMER-CREATED-BY
+               CP-CUSTOMER-LAST-UPD-DATE BY WS-CUSTOMER-LAST-UPD-DATE
+               CP-CUSTOMER-LAST-UPD-BY BY WS-CUSTOMER-LAST-UPD-BY.
+
+       COPY VRCP9003.
+
+       PROCEDURE DIVISION.
+
+       1000-MAIN.
+
+           MOVE "1"
+             TO WS-INQUIRY-ID
+
+           DISPLAY "========================================"
+           DISPLAY " VRCB0130 CUSTOMER INQUIRY TEST"
+           DISPLAY "========================================"
+
+           CALL "VRCB0130"
+                USING WS-INQUIRY-ID
+                      WS-CUSTOMER-RECORD
+                      OPERATION-RESULT
+
+           DISPLAY "Inquiry ID    : "
+                   WS-INQUIRY-ID
+
+           DISPLAY "Return Code   : "
+                   OPERATION-RETURN-CODE
+
+           DISPLAY "Severity      : "
+                   OPERATION-SEVERITY
+
+           DISPLAY "Customer ID   : "
+                   WS-CUSTOMER-ID
+
+           DISPLAY "First Name    : "
+                   WS-CUSTOMER-FIRST-NAME
+
+           DISPLAY "Last Name     : "
+                   WS-CUSTOMER-LAST-NAME
+
+           DISPLAY "Error Code    : "
+                   OPERATION-ERROR-CODE
+
+           DISPLAY "Message       : "
+                   OPERATION-RETURN-MESSAGE
+
+           IF OPERATION-RETURN-CODE = ZERO
+               AND OPERATION-SEVERITY = "S"
+               AND WS-CUSTOMER-ID = "1"
+               AND WS-CUSTOMER-FIRST-NAME = "EXISTING"
+               AND WS-CUSTOMER-LAST-NAME = "CUSTOMER"
+               DISPLAY "CUSTOMER INQUIRY PATH : PASS"
+           ELSE
+               DISPLAY "CUSTOMER INQUIRY PATH : FAIL"
+           END-IF
+
+           DISPLAY "========================================"
+
+           GOBACK.

@@ -69,6 +69,14 @@
              TO MESSAGE-TEXT
            WRITE MESSAGE-RECORD
 
+           MOVE "VR-CUST-005"
+             TO MESSAGE-CODE
+           MOVE "E"
+             TO MESSAGE-SEVERITY
+           MOVE "Customer not found"
+             TO MESSAGE-TEXT
+           WRITE MESSAGE-RECORD
+
            MOVE "VR-COM-001"
              TO MESSAGE-CODE
            MOVE "E"
