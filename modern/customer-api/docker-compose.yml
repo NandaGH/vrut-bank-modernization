@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: phoenix-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: phoenix
+      POSTGRES_USER: phoenix
+      POSTGRES_PASSWORD: phoenix_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - phoenix-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  phoenix-postgres-data:

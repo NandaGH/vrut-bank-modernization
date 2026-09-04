@@ -164,3 +164,30 @@ So that the legacy customer service can be exposed to an online CICS channel wit
 ## Sprint 6 - REST API Enablement
 
 Status: 🟡 In Progress
+
+### User Story
+
+As a digital channel,
+I want to access Customer services through REST APIs,
+So that the legacy customer capability can be consumed by modern applications.
+
+---
+
+### Tasks
+
+| ID | Task | Status |
+|----|------|--------|
+| S6-01 | Analyze existing REST/API architecture | ✅ |
+| S6-02 | Define Customer API contract | ✅ |
+| S6-03 | Define request/response mapping | ✅ |
+| S6-04 | Define REST-to-Customer-service boundary | ✅ |
+| S6-05 | Define error/HTTP mapping | ✅ |
+| S6-06 | Design REST wrapper | ✅ |
+| S6-07 | Implement REST wrapper | ✅ |
+| S6-08 | Local API validation strategy | ✅ |
+| S6-09 | Customer API test design | ✅ |
+| S6-10 | Integration validation | ✅ |
+| S6-11 | Update Sprint 6 documentation | ✅ |
+| S6-12 | Sprint 6 acceptance review | ✅ |
+| S6-13 | Git Commit | ⏳ |
+| S6-14 | Git Push | ⏳ |
