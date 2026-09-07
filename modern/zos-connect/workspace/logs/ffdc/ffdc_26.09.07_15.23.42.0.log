@@ -1,0 +1,146 @@
+------Start of DE processing------ = [9/7/26, 15:23:42:899 GMT ]
+Exception = java.net.UnknownHostException
+Source = com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager
+probeid = 131
+Stack Dump = java.net.UnknownHostException: cics-not-connected: Name or service not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1151)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1728)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1077)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1718)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1598)
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1508)
+	at com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager.createConnection(ConnectionManager.java:214)
+	at com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager.getConnection(ConnectionManager.java:125)
+	at com.ibm.zosconnect.cics.internal.conn.isc.SessionManager.getNewConversation(SessionManager.java:107)
+	at com.ibm.zosconnect.cics.ServerECIRequest.executeISC(ServerECIRequest.java:290)
+	at com.ibm.zosconnect.cics.ServerECIRequest.execute(ServerECIRequest.java:249)
+	at com.ibm.zosconnect.cics.CicsIpicConnection.flow(CicsIpicConnection.java:528)
+	at com.ibm.zosconnect.zosasset.cics.internal.CicsZosAsset.flowRequest(CicsZosAsset.java:231)
+	at com.ibm.zosconnect.zosasset.cics.internal.CicsCommareaZosAsset.invoke(CicsCommareaZosAsset.java:112)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl.invokeEndpoint(ProviderInvokeOperationImpl.java:518)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl.processOperationImpl(ProviderInvokeOperationImpl.java:239)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl.processOperation(ProviderInvokeOperationImpl.java:131)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl$Proxy$_$$_WeldClientProxy.processOperation(Unknown Source)
+	at com.ibm.zosconnect.api.CustomersApi.getCustomer(CustomersApi.java:97)
+	at com.ibm.zosconnect.api.CustomersApi$Proxy$_$$_WeldSubclass.getCustomer$$super(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.jboss.weld.interceptor.proxy.TerminalAroundInvokeInvocationContext.proceedInternal(TerminalAroundInvokeInvocationContext.java:51)
+	at org.jboss.weld.interceptor.proxy.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:78)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.SimplyTimedInterceptor.simplyTimedCallable(SimplyTimedInterceptor.java:101)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.SimplyTimedInterceptor.timedMethod(SimplyTimedInterceptor.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.jboss.weld.interceptor.reader.SimpleInterceptorInvocation$SimpleMethodInvocation.invoke(SimpleInterceptorInvocation.java:73)
+	at org.jboss.weld.interceptor.proxy.NonTerminalAroundInvokeInvocationContext.proceedInternal(NonTerminalAroundInvokeInvocationContext.java:66)
+	at org.jboss.weld.interceptor.proxy.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:78)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.CountedInterceptor.countedCallable(CountedInterceptor.java:99)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.CountedInterceptor.countedMethod(CountedInterceptor.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.jboss.weld.interceptor.reader.SimpleInterceptorInvocation$SimpleMethodInvocation.invoke(SimpleInterceptorInvocation.java:73)
+	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeAroundInvoke(InterceptorMethodHandler.java:84)
+	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeInterception(InterceptorMethodHandler.java:72)
+	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.invoke(InterceptorMethodHandler.java:56)
+	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:79)
+	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:68)
+	at com.ibm.zosconnect.api.CustomersApi$Proxy$_$$_WeldSubclass.getCustomer(Unknown Source)
+	at com.ibm.zosconnect.api.CustomersApi$Proxy$_$$_WeldClientProxy.getCustomer(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at com.ibm.ws.jaxrs20.cdi.component.JaxRsFactoryImplicitBeanCDICustomizer.serviceInvoke(JaxRsFactoryImplicitBeanCDICustomizer.java:352)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:642)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:161)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:101)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:276)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:213)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:460)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:112)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:69)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:120)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:325)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:129)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:278)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:139)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:148)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:114)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:98)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at io.openliberty.http.monitor.ServletFilter.doFilter(ServletFilter.java:77)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.zosconnect.provider.ApiFilter.doFilter(ApiFilter.java:44)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:5106)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:328)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1047)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1563)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:761)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:721)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:332)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:169)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:77)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1485)
+
+Dump of callerThis
+Object type = com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager
+  CLASS_VERSION = "%Z% %W% %I% %E% %U%"
+  copyright_notice = "PID 5655-CE3,5655-CE5 Copyright IBM Corp. 2006, 2022"
+  tc = class com.ibm.websphere.ras.TraceComponent@93a7969e
+    strings[0] = "TraceComponent[com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager,class com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager,[zosConnectServiceCics, zosConnectCics],com.ibm.zosconnect.cics.internal.resources.ZosConnectCicsMessages,null]"
+  PROTOCOL_TCP = "TCP"
+  PROTOCOL_SSL = "SSL"
+  connectionPool = class java.util.HashMap@69de4842
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+    MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+    DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+    TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+    UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+    MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+    table = "/* Could not access table */"
+    entrySet = "/* Could not access entrySet */"
+    size = "/* Could not access size */"
+    modCount = "/* Could not access modCount */"
+    threshold = "/* Could not access threshold */"
+    loadFactor = "/* Could not access loadFactor */"
+    keySet = "/* Could not access keySet */"
+    values = "/* Could not access values */"
+  connectionPoolReconnect = class java.util.HashMap@1ae0be58
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+    MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+    DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+    TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+    UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+    MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+    table = "/* Could not access table */"
+    entrySet = "/* Could not access entrySet */"
+    size = "/* Could not access size */"
+    modCount = "/* Could not access modCount */"
+    threshold = "/* Could not access threshold */"
+    loadFactor = "/* Could not access loadFactor */"
+    keySet = "/* Could not access keySet */"
+    values = "/* Could not access values */"
+  serialVersionUID = -5274694396617937375
+

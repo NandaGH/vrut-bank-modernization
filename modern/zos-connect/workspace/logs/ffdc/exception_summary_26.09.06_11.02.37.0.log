@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1   9/6/26, 11:02:37:493 GMT    9/6/26, 11:02:37:493 GMT  java.lang.IllegalArgumentException com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl 151
+                                                                            - /liberty/logs/ffdc/ffdc_26.09.06_11.02.37.0.log
+------+------+---------------------------+---------------------------+---------------------------

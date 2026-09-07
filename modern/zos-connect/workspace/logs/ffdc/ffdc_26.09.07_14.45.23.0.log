@@ -1,0 +1,647 @@
+------Start of DE processing------ = [9/7/26, 14:45:23:744 GMT ]
+Exception = java.lang.IllegalArgumentException
+Source = com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl
+probeid = 151
+Stack Dump = java.lang.IllegalArgumentException: CWWKS4118E: LTPA configuration error. Add a keysPassword attribute to your <ltpa /> configuration, or set the 'ltpa_keys_password' or 'keystore_password' environment variables.
+	at com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl.resolvePrimaryKeyPassword(LTPAConfigurationImpl.java:267)
+	at com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl.loadConfig(LTPAConfigurationImpl.java:202)
+	at com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl.activate(LTPAConfigurationImpl.java:148)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.invokeMethod(BaseMethod.java:257)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.access$500(BaseMethod.java:41)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod$Resolved.invoke(BaseMethod.java:701)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.invoke(BaseMethod.java:544)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:317)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:307)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:354)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:115)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:1002)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:975)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:785)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleDynamicCustomizer.addedService(DependencyManager.java:861)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleDynamicCustomizer.addedService(DependencyManager.java:816)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1232)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1152)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:959)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:895)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1184)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:118)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:134)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:988)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:999)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:933)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:146)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:321)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:495)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.register(AbstractComponentManager.java:929)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.register(AbstractComponentManager.java:915)
+	at org.apache.felix.scr.impl.manager.RegistrationManager.changeRegistration(RegistrationManager.java:133)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.registerService(AbstractComponentManager.java:984)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:752)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.enableInternal(AbstractComponentManager.java:674)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.enable(AbstractComponentManager.java:437)
+	at org.apache.felix.scr.impl.manager.ConfigurableComponentHolder.enableComponents(ConfigurableComponentHolder.java:671)
+	at org.apache.felix.scr.impl.BundleComponentActivator.initialEnable(BundleComponentActivator.java:342)
+	at org.apache.felix.scr.impl.Activator.loadComponents(Activator.java:610)
+	at org.apache.felix.scr.impl.Activator.access$200(Activator.java:75)
+	at org.apache.felix.scr.impl.Activator$ScrExtension.start(Activator.java:477)
+	at org.apache.felix.scr.impl.AbstractExtender.createExtension(AbstractExtender.java:196)
+	at org.apache.felix.scr.impl.AbstractExtender.modifiedBundle(AbstractExtender.java:169)
+	at org.apache.felix.scr.impl.AbstractExtender.modifiedBundle(AbstractExtender.java:49)
+	at org.osgi.util.tracker.BundleTracker$Tracked.customizerModified(BundleTracker.java:490)
+	at org.osgi.util.tracker.BundleTracker$Tracked.customizerModified(BundleTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:233)
+	at org.osgi.util.tracker.BundleTracker$Tracked.bundleChanged(BundleTracker.java:452)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:975)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:237)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:136)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:128)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:232)
+	at org.eclipse.osgi.container.Module.publishEvent(Module.java:534)
+	at org.eclipse.osgi.container.Module.start(Module.java:518)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2110)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$1.execute(ModuleContainer.java:2096)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2101)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2044)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:2003)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1915)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+Dump of callerThis
+Object type = com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl
+  tc = class com.ibm.websphere.ras.TraceComponent@93b89555
+    strings[0] = "TraceComponent[com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl,class com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl,[Token],com.ibm.ws.security.token.ltpa.internal.resources.LTPAMessages,null]"
+  KEY_LOCATION_SERVICE = "locationService"
+  KEY_EXECUTOR_SERVICE = "executorService"
+  KEY_CHANGE_SERVICE = "ltpaKeysChangeNotifier"
+  DEFAULT_CONFIG_LOCATION = "${server.config.dir}/resources/security/ltpa.keys"
+  DEFAULT_CONFIG_DIRECTORY = "${server.config.dir}/resources/security/"
+  DEFAULT_OUTPUT_LOCATION = "${server.output.dir}/resources/security/ltpa.keys"
+  KEY_AUTH_FILTER_REF = "authFilterRef"
+  KEY_EXP_DIFF_ALLOWED = "expirationDifferenceAllowed"
+  KEY_SERVICE_PID = "service.pid"
+  locationService = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@84090768
+    referenceName = "locationService"
+    contextRef = class java.util.concurrent.atomic.AtomicReference@e1cbecd3
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    references = class java.util.PriorityQueue@fb46b4a5
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      queue = "/* Could not access queue */"
+      size = "/* Could not access size */"
+      comparator = "/* Could not access comparator */"
+      modCount = "/* Could not access modCount */"
+    referencesLock = class java.util.concurrent.locks.ReentrantReadWriteLock@302d44f5
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      readerLock = "/* Could not access readerLock */"
+      writerLock = "/* Could not access writerLock */"
+      sync = "/* Could not access sync */"
+    serialVersionUID = -5371852544883285473
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@fd3fdbeb
+      strings[0] = "TraceComponent[com.ibm.wsspi.kernel.service.utils.AtomicServiceReference,class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference,[kernelUtils],com.ibm.ws.kernel.service.utils.resources.ServiceMessages,null]"
+  executorService = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@dbec6881
+    referenceName = "executorService"
+    contextRef = class java.util.concurrent.atomic.AtomicReference@3b42b368
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    references = class java.util.PriorityQueue@bd3bb7e1
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      queue = "/* Could not access queue */"
+      size = "/* Could not access size */"
+      comparator = "/* Could not access comparator */"
+      modCount = "/* Could not access modCount */"
+    referencesLock = class java.util.concurrent.locks.ReentrantReadWriteLock@ffb48305
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      readerLock = "/* Could not access readerLock */"
+      writerLock = "/* Could not access writerLock */"
+      sync = "/* Could not access sync */"
+    serialVersionUID = -5371852544883285473
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@fd3fdbeb
+  ltpaKeysChangeNotifierService = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@ea3a7680
+    referenceName = "ltpaKeysChangeNotifier"
+    contextRef = class java.util.concurrent.atomic.AtomicReference@29719a3b
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    references = class java.util.PriorityQueue@a7e23f64
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      queue = "/* Could not access queue */"
+      size = "/* Could not access size */"
+      comparator = "/* Could not access comparator */"
+      modCount = "/* Could not access modCount */"
+    referencesLock = class java.util.concurrent.locks.ReentrantReadWriteLock@c001335f
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      readerLock = "/* Could not access readerLock */"
+      writerLock = "/* Could not access writerLock */"
+      sync = "/* Could not access sync */"
+    serialVersionUID = -5371852544883285473
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@fd3fdbeb
+  registration = null
+  cc = class org.apache.felix.scr.impl.manager.ComponentContextImpl@39abd0d6
+    m_componentManager = class org.apache.felix.scr.impl.manager.SingleComponentManager@a0bb2d1a
+      m_useCount = class java.util.concurrent.atomic.AtomicInteger@d4edf34e
+      m_componentContext = class org.apache.felix.scr.impl.manager.ComponentContextImpl@39abd0d6
+      m_configurationProperties = class java.util.HashMap@bb325929
+      m_factoryProperties = null
+      m_properties = class java.util.HashMap@4f2f372
+      m_serviceProperties = null
+      REASONS = class java.lang.String[7]
+      m_container = class org.apache.felix.scr.impl.ComponentRegistry$DefaultConfigurableComponentHolder@bc0ab58d
+      m_factoryInstance = false
+      m_componentId = 451
+      m_componentMethods = class org.apache.felix.scr.impl.inject.internal.ComponentMethodsImpl@4f66983e
+      m_dependencyManagers = class java.util.ArrayList@4da4836d
+      m_dependencyManagersInitialized = true
+      m_trackingCount = class java.util.concurrent.atomic.AtomicInteger@f952efbe
+      m_stateLock = class java.util.concurrent.locks.ReentrantLock@344af53d
+      m_enabledLatchRef = class java.util.concurrent.atomic.AtomicReference@9170fc8d
+      state = class java.util.concurrent.atomic.AtomicReference@851161b9
+      m_floor = 6
+      m_ceiling = 6
+      m_missingLock = class java.util.concurrent.locks.ReentrantLock@6bf3cbb1
+      m_missingCondition = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@35bd9d06
+      m_missing = class java.util.TreeSet@143734db
+      m_activationLock = class java.util.concurrent.locks.ReentrantReadWriteLock@83f4da76
+      failureReason = null
+      taskCounter = class java.util.concurrent.atomic.AtomicLong@4acc4bc
+      registrationManager = class org.apache.felix.scr.impl.manager.AbstractComponentManager$3@985a349c
+    edgeInfos = class org.apache.felix.scr.impl.manager.EdgeInfo[4]
+      EdgeInfo[0] = class org.apache.felix.scr.impl.manager.EdgeInfo@b76549fd
+      EdgeInfo[1] = class org.apache.felix.scr.impl.manager.EdgeInfo@6791df24
+      EdgeInfo[2] = class org.apache.felix.scr.impl.manager.EdgeInfo@4a30e958
+      EdgeInfo[3] = class org.apache.felix.scr.impl.manager.EdgeInfo@2b875678
+    m_componentInstance = class org.apache.felix.scr.impl.manager.ComponentContextImpl$ComponentInstanceImpl@e41ad031
+      m_componentContext = class org.apache.felix.scr.impl.manager.ComponentContextImpl@39abd0d6
+    m_usingBundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@66cd0274
+      equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@b5826123
+      module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@58e9d598
+      monitor = class java.lang.Object@a1ee7225
+      context = class org.eclipse.osgi.internal.framework.BundleContextImpl@9969a3ca
+      signedContent = null
+      $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+    m_serviceRegistration = null
+    m_implementationObject = class com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl@9533cdb7
+    m_implementationAccessible = false
+    accessibleLatch = class java.util.concurrent.CountDownLatch@be1a48ee
+      sync = "/* Could not access sync */"
+    serviceObjectsHelper = class org.apache.felix.scr.impl.helper.ComponentServiceObjectsHelper@9dc0e112
+      bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@9969a3ca
+      services = class java.util.concurrent.ConcurrentHashMap@39a7e722
+      closedServices = class java.util.ArrayList@bfa54688
+      prototypeInstances = class java.util.concurrent.ConcurrentHashMap@d87e47db
+    boundValues = null
+  createTask = null
+  factory = null
+  ltpaKeyInfoManager = null
+  primaryKeyImportFile = "/opt/ibm/wlp/output/defaultServer/resources/security/ltpa.keys"
+  primaryKeyImportDir = null
+  primaryKeyPassword = null
+  tryToReEncryptLtpaKeys = false
+  keyTokenExpiration = 0
+  monitorInterval = 0
+  ltpaFileMonitor = null
+  ltpaFileMonitorRegistration = null
+  reentrantReadWriteLock = class java.util.concurrent.locks.ReentrantReadWriteLock@1d7e691c
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    readerLock = "/* Could not access readerLock */"
+    writerLock = "/* Could not access writerLock */"
+    sync = "/* Could not access sync */"
+  writeLock = class java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@dbf3b20e
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    sync = "/* Could not access sync */"
+  readLock = class java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@99a09fdc
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    sync = "/* Could not access sync */"
+  authFilterRef = null
+  expirationDifferenceAllowed = 0
+  monitorValidationKeysDir = false
+  updateTrigger = null
+  validationKeys = class java.util.concurrent.CopyOnWriteArrayList@b2e982f2
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+    lock = "/* Could not access lock */"
+    array = "/* Could not access array */"
+  configValidationKeys = null
+  nonConfigValidationKeys = null
+  currentlyDeletedFiles = class java.util.HashSet@8b7eedc7
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    map = "/* Could not access map */"
+    PRESENT = "/* Could not access PRESENT */"
+  allKeysFiles = class java.util.HashSet@fcd5e4c
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    map = "/* Could not access map */"
+    PRESENT = "/* Could not access PRESENT */"
+  isValidationKeysFileConfigured = false
+  serialVersionUID = -2282918900392117368
+
+Dump of objectArray[0]
+Object type = org.apache.felix.scr.impl.manager.ComponentContextImpl
+  m_componentManager = class org.apache.felix.scr.impl.manager.SingleComponentManager@a0bb2d1a
+    m_useCount = class java.util.concurrent.atomic.AtomicInteger@d4edf34e
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      U = "/* Could not access U */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    m_componentContext = class org.apache.felix.scr.impl.manager.ComponentContextImpl@39abd0d6
+    m_configurationProperties = class java.util.HashMap@bb325929
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      table = "/* Could not access table */"
+      entrySet = "/* Could not access entrySet */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+      threshold = "/* Could not access threshold */"
+      loadFactor = "/* Could not access loadFactor */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+    m_factoryProperties = null
+    m_properties = class java.util.HashMap@4f2f372
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_INITIAL_CAPACITY = "/* Could not access DEFAULT_INITIAL_CAPACITY */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_LOAD_FACTOR = "/* Could not access DEFAULT_LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      table = "/* Could not access table */"
+      entrySet = "/* Could not access entrySet */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+      threshold = "/* Could not access threshold */"
+      loadFactor = "/* Could not access loadFactor */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+    m_serviceProperties = null
+    REASONS = class java.lang.String[7]
+      String[0] = "Unspecified"
+      String[1] = "Component disabled"
+      String[2] = "Reference became unsatisfied"
+      String[3] = "Configuration modified"
+      String[4] = "Configuration deleted"
+      String[5] = "Component disabled"
+      String[6] = "Bundle stopped"
+    m_container = class org.apache.felix.scr.impl.ComponentRegistry$DefaultConfigurableComponentHolder@bc0ab58d
+      m_activator = class org.apache.felix.scr.impl.BundleComponentActivator@87e82123
+      m_componentMetadata = class org.apache.felix.scr.impl.metadata.ComponentMetadata@4836f1de
+      m_targetedPids = class org.apache.felix.scr.impl.metadata.TargetedPID[1]
+      m_changeCount = class java.lang.Long[1]
+      m_factoryChangeCount = class java.util.HashMap@3392d37e
+      m_factoryPidIndex = null
+      m_configurations = class java.util.Dictionary[1]
+      m_factoryConfigurations = class java.util.HashMap@6e4d932b
+      m_factoryTargetedPids = class java.util.HashMap@bd8de9c7
+      m_components = class java.util.HashMap@8c6a5718
+      m_singleComponent = class org.apache.felix.scr.impl.manager.SingleComponentManager@a0bb2d1a
+      m_enabled = true
+      enableLock = class java.lang.Object@f122ff66
+      m_enablePromise = class org.osgi.util.promise.ResolvedPromiseImpl@1a0b0b5b
+      m_disablePromise = null
+      m_componentMethods = class org.apache.felix.scr.impl.inject.internal.ComponentMethodsImpl@4f66983e
+      logger = class org.apache.felix.scr.impl.logger.ScrLogManager$ScrLoggerFacade@ff9fe9a4
+    m_factoryInstance = false
+    m_componentId = 451
+    m_componentMethods = class org.apache.felix.scr.impl.inject.internal.ComponentMethodsImpl@4f66983e
+      m_activateMethod = class org.apache.felix.scr.impl.inject.methods.ActivateMethod@da42ef6a
+      m_modifiedMethod = class org.apache.felix.scr.impl.inject.methods.ModifiedMethod@635c7e7f
+      m_deactivateMethod = class org.apache.felix.scr.impl.inject.methods.DeactivateMethod@448202a4
+      m_constructor = class org.apache.felix.scr.impl.inject.internal.ComponentConstructorImpl@25d8321b
+      bindMethodMap = class java.util.HashMap@887312cc
+    m_dependencyManagers = class java.util.ArrayList@4da4836d
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+      elementData = "/* Could not access elementData */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+    m_dependencyManagersInitialized = true
+    m_trackingCount = class java.util.concurrent.atomic.AtomicInteger@f952efbe
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      U = "/* Could not access U */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    m_stateLock = class java.util.concurrent.locks.ReentrantLock@344af53d
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      sync = "/* Could not access sync */"
+    m_enabledLatchRef = class java.util.concurrent.atomic.AtomicReference@9170fc8d
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    state = class java.util.concurrent.atomic.AtomicReference@851161b9
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    m_floor = 6
+    m_ceiling = 6
+    m_missingLock = class java.util.concurrent.locks.ReentrantLock@6bf3cbb1
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      sync = "/* Could not access sync */"
+    m_missingCondition = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@35bd9d06
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      firstWaiter = "/* Could not access firstWaiter */"
+      lastWaiter = "/* Could not access lastWaiter */"
+      OOME_COND_WAIT_DELAY = "/* Could not access OOME_COND_WAIT_DELAY */"
+      this$0 = "/* Could not access this$0 */"
+    m_missing = class java.util.TreeSet@143734db
+      m = "/* Could not access m */"
+      PRESENT = "/* Could not access PRESENT */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    m_activationLock = class java.util.concurrent.locks.ReentrantReadWriteLock@83f4da76
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      readerLock = "/* Could not access readerLock */"
+      writerLock = "/* Could not access writerLock */"
+      sync = "/* Could not access sync */"
+    failureReason = null
+    taskCounter = class java.util.concurrent.atomic.AtomicLong@4acc4bc
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      U = "/* Could not access U */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    registrationManager = class org.apache.felix.scr.impl.manager.AbstractComponentManager$3@985a349c
+      this$0 = class org.apache.felix.scr.impl.manager.SingleComponentManager@a0bb2d1a
+      registrationLock = class java.util.concurrent.locks.ReentrantLock@a1137662
+      opqueue = class java.util.ArrayList@57d1bac3
+      m_serviceRegistration = null
+  edgeInfos = class org.apache.felix.scr.impl.manager.EdgeInfo[4]
+    EdgeInfo[0] = class org.apache.felix.scr.impl.manager.EdgeInfo@b76549fd
+      open = 1
+      close = -1
+      openLatch = class java.util.concurrent.CountDownLatch@7a74581f
+      closeLatch = class java.util.concurrent.CountDownLatch@d9831395
+    EdgeInfo[1] = class org.apache.felix.scr.impl.manager.EdgeInfo@6791df24
+      open = 4
+      close = -1
+      openLatch = class java.util.concurrent.CountDownLatch@2ef13c0a
+      closeLatch = class java.util.concurrent.CountDownLatch@93ef0ad
+    EdgeInfo[2] = class org.apache.felix.scr.impl.manager.EdgeInfo@4a30e958
+      open = 0
+      close = -1
+      openLatch = class java.util.concurrent.CountDownLatch@17bbeb21
+      closeLatch = class java.util.concurrent.CountDownLatch@10fcb051
+    EdgeInfo[3] = class org.apache.felix.scr.impl.manager.EdgeInfo@2b875678
+      open = 5
+      close = -1
+      openLatch = class java.util.concurrent.CountDownLatch@be661658
+      closeLatch = class java.util.concurrent.CountDownLatch@2a60c35d
+  m_componentInstance = class org.apache.felix.scr.impl.manager.ComponentContextImpl$ComponentInstanceImpl@e41ad031
+    m_componentContext = class org.apache.felix.scr.impl.manager.ComponentContextImpl@39abd0d6
+  m_usingBundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@66cd0274
+    equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@b5826123
+      NAME = "org.eclipse.osgi"
+      secureAction = class org.eclipse.osgi.framework.util.SecureAction@19392bb8
+      connectModules = class org.eclipse.osgi.internal.framework.EquinoxContainer$ConnectModules@7fdcddd5
+      equinoxConfig = class org.eclipse.osgi.internal.framework.EquinoxConfiguration@8561e31b
+      logServices = class org.eclipse.osgi.internal.log.EquinoxLogServices@fcbead01
+      storage = class org.eclipse.osgi.storage.Storage@3b5ad60c
+      bootDelegation = class java.util.HashSet@22694ccb
+      bootDelegationStems = class java.lang.String[12]
+      bootDelegateAll = false
+      isProcessClassRecursionSupportedByAll = false
+      eventPublisher = class org.eclipse.osgi.internal.framework.EquinoxEventPublisher@63d6b4eb
+      monitor = class java.lang.Object@10bed7f5
+      bootLoader = class jdk.internal.loader.ClassLoaders$PlatformClassLoader@b9490a5
+      serviceRegistry = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistry@7d95665a
+      contextFinder = class org.eclipse.osgi.internal.framework.ContextFinder@72d2fa6a
+      signedContentFactory = class org.osgi.util.tracker.ServiceTracker@21831b67
+      executor = class java.util.concurrent.ScheduledThreadPoolExecutor@7b90eae5
+      storageSaver = class org.eclipse.osgi.internal.framework.StorageSaver@56be99a4
+    module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@58e9d598
+      this$0 = class org.eclipse.osgi.internal.framework.EquinoxBundle@66cd0274
+      ACTIVE_SET = class java.util.RegularEnumSet@dd949715
+      RESOLVED_SET = class java.util.RegularEnumSet@56ce1245
+      id = 171
+      location = "feature@reference:file:/opt/ibm/wlp/lib/com.ibm.ws.security.token.ltpa_1.0.111.cl260320260314-0319.jar"
+      revisions = class org.eclipse.osgi.container.ModuleRevisions@296a3b39
+      stateChangeLock = class org.eclipse.osgi.internal.container.EquinoxReentrantLock@686d7a0e
+      stateTransitionEvents = class java.util.RegularEnumSet@2114dabe
+      settings = class java.util.RegularEnumSet@c36a679
+      inStart = class java.util.concurrent.atomic.AtomicInteger@3a2a7f56
+      state = class org.eclipse.osgi.container.Module$State@f63ebbb5
+      startlevel = 12
+      lastModified = 1788792321924
+      VALID_RESOLVED_TRANSITION = class java.util.RegularEnumSet@f0933e5f
+      VALID_STOPPED_TRANSITION = class java.util.RegularEnumSet@abf0392c
+      $SWITCH_TABLE$org$eclipse$osgi$container$ModuleContainerAdaptor$ModuleEvent = {1,2,3,4,5,6,7,8,9,10} /* array length = 10 */
+    monitor = class java.lang.Object@a1ee7225
+    context = class org.eclipse.osgi.internal.framework.BundleContextImpl@9969a3ca
+    signedContent = null
+    $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+  m_serviceRegistration = null
+  m_implementationObject = class com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl@9533cdb7
+    tc = class com.ibm.websphere.ras.TraceComponent@93b89555
+      strings[0] = "TraceComponent[com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl,class com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl,[Token],com.ibm.ws.security.token.ltpa.internal.resources.LTPAMessages,null]"
+    KEY_LOCATION_SERVICE = "locationService"
+    KEY_EXECUTOR_SERVICE = "executorService"
+    KEY_CHANGE_SERVICE = "ltpaKeysChangeNotifier"
+    DEFAULT_CONFIG_LOCATION = "${server.config.dir}/resources/security/ltpa.keys"
+    DEFAULT_CONFIG_DIRECTORY = "${server.config.dir}/resources/security/"
+    DEFAULT_OUTPUT_LOCATION = "${server.output.dir}/resources/security/ltpa.keys"
+    KEY_AUTH_FILTER_REF = "authFilterRef"
+    KEY_EXP_DIFF_ALLOWED = "expirationDifferenceAllowed"
+    KEY_SERVICE_PID = "service.pid"
+    locationService = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@84090768
+      referenceName = "locationService"
+      contextRef = class java.util.concurrent.atomic.AtomicReference@e1cbecd3
+      references = class java.util.PriorityQueue@fb46b4a5
+      referencesLock = class java.util.concurrent.locks.ReentrantReadWriteLock@302d44f5
+      serialVersionUID = -5371852544883285473
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@fd3fdbeb
+    executorService = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@dbec6881
+      referenceName = "executorService"
+      contextRef = class java.util.concurrent.atomic.AtomicReference@3b42b368
+      references = class java.util.PriorityQueue@bd3bb7e1
+      referencesLock = class java.util.concurrent.locks.ReentrantReadWriteLock@ffb48305
+      serialVersionUID = -5371852544883285473
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@fd3fdbeb
+    ltpaKeysChangeNotifierService = class com.ibm.wsspi.kernel.service.utils.AtomicServiceReference@ea3a7680
+      referenceName = "ltpaKeysChangeNotifier"
+      contextRef = class java.util.concurrent.atomic.AtomicReference@29719a3b
+      references = class java.util.PriorityQueue@a7e23f64
+      referencesLock = class java.util.concurrent.locks.ReentrantReadWriteLock@c001335f
+      serialVersionUID = -5371852544883285473
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@fd3fdbeb
+    registration = null
+    cc = class org.apache.felix.scr.impl.manager.ComponentContextImpl@39abd0d6
+    createTask = null
+    factory = null
+    ltpaKeyInfoManager = null
+    primaryKeyImportFile = "/opt/ibm/wlp/output/defaultServer/resources/security/ltpa.keys"
+    primaryKeyImportDir = null
+    primaryKeyPassword = null
+    tryToReEncryptLtpaKeys = false
+    keyTokenExpiration = 0
+    monitorInterval = 0
+    ltpaFileMonitor = null
+    ltpaFileMonitorRegistration = null
+    reentrantReadWriteLock = class java.util.concurrent.locks.ReentrantReadWriteLock@1d7e691c
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      readerLock = "/* Could not access readerLock */"
+      writerLock = "/* Could not access writerLock */"
+      sync = "/* Could not access sync */"
+    writeLock = class java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock@dbf3b20e
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      sync = "/* Could not access sync */"
+    readLock = class java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock@99a09fdc
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      sync = "/* Could not access sync */"
+    authFilterRef = null
+    expirationDifferenceAllowed = 0
+    monitorValidationKeysDir = false
+    updateTrigger = null
+    validationKeys = class java.util.concurrent.CopyOnWriteArrayList@b2e982f2
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      lock = "/* Could not access lock */"
+      array = "/* Could not access array */"
+    configValidationKeys = null
+    nonConfigValidationKeys = null
+    currentlyDeletedFiles = class java.util.HashSet@8b7eedc7
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      map = "/* Could not access map */"
+      PRESENT = "/* Could not access PRESENT */"
+    allKeysFiles = class java.util.HashSet@fcd5e4c
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      map = "/* Could not access map */"
+      PRESENT = "/* Could not access PRESENT */"
+    isValidationKeysFileConfigured = false
+    serialVersionUID = -2282918900392117368
+  m_implementationAccessible = false
+  accessibleLatch = class java.util.concurrent.CountDownLatch@be1a48ee
+    sync = "/* Could not access sync */"
+  serviceObjectsHelper = class org.apache.felix.scr.impl.helper.ComponentServiceObjectsHelper@9dc0e112
+    bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@9969a3ca
+      valid = true
+      bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@66cd0274
+      container = class org.eclipse.osgi.internal.framework.EquinoxContainer@b5826123
+      debug = class org.eclipse.osgi.internal.debug.Debug@38019652
+      servicesInUse = class java.util.HashMap@f482b272
+      activator = null
+      contextLock = class java.lang.Object@41651e6d
+    services = class java.util.concurrent.ConcurrentHashMap@39a7e722
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+      DEFAULT_CONCURRENCY_LEVEL = "/* Could not access DEFAULT_CONCURRENCY_LEVEL */"
+      LOAD_FACTOR = "/* Could not access LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      MIN_TRANSFER_STRIDE = "/* Could not access MIN_TRANSFER_STRIDE */"
+      RESIZE_STAMP_BITS = "/* Could not access RESIZE_STAMP_BITS */"
+      MAX_RESIZERS = "/* Could not access MAX_RESIZERS */"
+      RESIZE_STAMP_SHIFT = "/* Could not access RESIZE_STAMP_SHIFT */"
+      MOVED = "/* Could not access MOVED */"
+      TREEBIN = "/* Could not access TREEBIN */"
+      RESERVED = "/* Could not access RESERVED */"
+      HASH_BITS = "/* Could not access HASH_BITS */"
+      NCPU = "/* Could not access NCPU */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      table = "/* Could not access table */"
+      nextTable = "/* Could not access nextTable */"
+      baseCount = "/* Could not access baseCount */"
+      sizeCtl = "/* Could not access sizeCtl */"
+      transferIndex = "/* Could not access transferIndex */"
+      cellsBusy = "/* Could not access cellsBusy */"
+      counterCells = "/* Could not access counterCells */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+      entrySet = "/* Could not access entrySet */"
+      U = "/* Could not access U */"
+      SIZECTL = "/* Could not access SIZECTL */"
+      TRANSFERINDEX = "/* Could not access TRANSFERINDEX */"
+      BASECOUNT = "/* Could not access BASECOUNT */"
+      CELLSBUSY = "/* Could not access CELLSBUSY */"
+      CELLVALUE = "/* Could not access CELLVALUE */"
+      ABASE = "/* Could not access ABASE */"
+      ASHIFT = "/* Could not access ASHIFT */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+    closedServices = class java.util.ArrayList@bfa54688
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+      elementData = "/* Could not access elementData */"
+      size = "/* Could not access size */"
+      modCount = "/* Could not access modCount */"
+    prototypeInstances = class java.util.concurrent.ConcurrentHashMap@d87e47db
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      MAXIMUM_CAPACITY = "/* Could not access MAXIMUM_CAPACITY */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+      DEFAULT_CONCURRENCY_LEVEL = "/* Could not access DEFAULT_CONCURRENCY_LEVEL */"
+      LOAD_FACTOR = "/* Could not access LOAD_FACTOR */"
+      TREEIFY_THRESHOLD = "/* Could not access TREEIFY_THRESHOLD */"
+      UNTREEIFY_THRESHOLD = "/* Could not access UNTREEIFY_THRESHOLD */"
+      MIN_TREEIFY_CAPACITY = "/* Could not access MIN_TREEIFY_CAPACITY */"
+      MIN_TRANSFER_STRIDE = "/* Could not access MIN_TRANSFER_STRIDE */"
+      RESIZE_STAMP_BITS = "/* Could not access RESIZE_STAMP_BITS */"
+      MAX_RESIZERS = "/* Could not access MAX_RESIZERS */"
+      RESIZE_STAMP_SHIFT = "/* Could not access RESIZE_STAMP_SHIFT */"
+      MOVED = "/* Could not access MOVED */"
+      TREEBIN = "/* Could not access TREEBIN */"
+      RESERVED = "/* Could not access RESERVED */"
+      HASH_BITS = "/* Could not access HASH_BITS */"
+      NCPU = "/* Could not access NCPU */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      table = "/* Could not access table */"
+      nextTable = "/* Could not access nextTable */"
+      baseCount = "/* Could not access baseCount */"
+      sizeCtl = "/* Could not access sizeCtl */"
+      transferIndex = "/* Could not access transferIndex */"
+      cellsBusy = "/* Could not access cellsBusy */"
+      counterCells = "/* Could not access counterCells */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+      entrySet = "/* Could not access entrySet */"
+      U = "/* Could not access U */"
+      SIZECTL = "/* Could not access SIZECTL */"
+      TRANSFERINDEX = "/* Could not access TRANSFERINDEX */"
+      BASECOUNT = "/* Could not access BASECOUNT */"
+      CELLSBUSY = "/* Could not access CELLSBUSY */"
+      CELLVALUE = "/* Could not access CELLVALUE */"
+      ABASE = "/* Could not access ABASE */"
+      ASHIFT = "/* Could not access ASHIFT */"
+      keySet = "/* Could not access keySet */"
+      values = "/* Could not access values */"
+  boundValues = null
+
+Dump of objectArray[1]
+Object type = org.apache.felix.scr.impl.helper.ReadOnlyDictionary
+  m_delegate = class java.util.Hashtable@d6efd0ba
+    table = "/* Could not access table */"
+    count = "/* Could not access count */"
+    threshold = "/* Could not access threshold */"
+    loadFactor = "/* Could not access loadFactor */"
+    modCount = "/* Could not access modCount */"
+    serialVersionUID = "/* Could not access serialVersionUID */"
+    MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+    keySet = "/* Could not access keySet */"
+    entrySet = "/* Could not access entrySet */"
+    values = "/* Could not access values */"
+    KEYS = "/* Could not access KEYS */"
+    VALUES = "/* Could not access VALUES */"
+    ENTRIES = "/* Could not access ENTRIES */"
+  m_serviceReference = null
+

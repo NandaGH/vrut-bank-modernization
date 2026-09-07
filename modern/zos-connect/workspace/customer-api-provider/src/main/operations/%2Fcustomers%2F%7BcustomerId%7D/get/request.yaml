@@ -1,0 +1,13 @@
+---
+version: "1.2"
+mappings:
+- commarea:
+    mappings:
+    - VRCB0130-COMMAREA:
+        required: false
+        nullable: false
+        mappings:
+        - VRCB0130-INQUIRY-ID:
+            required: false
+            nullable: false
+            template: "{{$pathParameters.customerId}}"

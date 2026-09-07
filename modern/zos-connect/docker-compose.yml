@@ -1,0 +1,17 @@
+services:
+  zos-connect:
+    image: icr.io/zosconnect/ibm-zcon-designer:3.0.105
+    platform: linux/amd64
+    container_name: phoenix-zos-connect
+    environment:
+      CICS_HOST: "cics-not-connected"
+      CICS_PORT: "1"
+      CICS_USER: "demo"
+      CICS_PASSWORD: "demo"
+    ports:
+      - "9080:9080"
+      - "9443:9443"
+    volumes:
+      - ./workspace/customer-api-provider:/workspace/project
+      - ./workspace/logs:/logs
+      - ./workspace/certs:/config/certs

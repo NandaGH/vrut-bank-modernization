@@ -1,0 +1,13 @@
+---
+version: "1.0"
+response_200.yaml:
+  condition: "$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-OPERATION-RESULT\"\
+    .\"VRCB0130-RETURN-CODE\" = 0"
+  httpStatusCode: 200
+response_404.yaml:
+  condition: "$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-OPERATION-RESULT\"\
+    .\"VRCB0130-RETURN-CODE\" = \"VR-CUST-005\""
+  httpStatusCode: 404
+response_500.yaml:
+  condition: true
+  httpStatusCode: 500

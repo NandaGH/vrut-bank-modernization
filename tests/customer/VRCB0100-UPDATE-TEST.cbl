@@ -107,13 +107,13 @@
            DISPLAY " VRCB0100 CUSTOMER UPDATE TEST"
            DISPLAY "========================================"
 
-           MOVE "1"
+           MOVE "0000000005"
              TO WS-UPDATE-ID
 
            MOVE SPACES
              TO WS-CUSTOMER-RECORD
 
-           MOVE "1"
+           MOVE "0000000005"
              TO WS-CUSTOMER-ID
 
            MOVE "IN"

@@ -1,0 +1,9 @@
+---
+version: 1.0
+type: "cicsCommarea-1.0"
+description: ""
+providerProperties:
+  language: "COBOL"
+  program: "VRCB0100"
+  connectionRef: "cicsConn"
+  ccsid: "37"

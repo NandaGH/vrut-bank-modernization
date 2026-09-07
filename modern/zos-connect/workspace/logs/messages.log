@@ -1,0 +1,428 @@
+********************************************************************************
+product = WebSphere Application Server 26.0.0.3, z/OS Connect 03.00.105 (wlp-1.0.111.cl260320260314-0319)
+wlp.install.dir = /opt/ibm/wlp/
+server.output.dir = /opt/ibm/wlp/output/defaultServer/
+java.home = /opt/java/openjdk
+java.version = 25.0.3
+java.runtime = IBM Semeru Runtime Certified Edition (25.0.3+9-LTS)
+os = Linux (7.0.12-linuxkit; amd64) (en_US)
+process = 1@02db3501d6ac
+Classpath = /opt/ibm/wlp/bin/tools/ws-server.jar
+Java Library path = /opt/java/openjdk/lib/default:/opt/java/openjdk/lib:/usr/lib64:/usr/lib
+********************************************************************************
+[9/7/26, 14:45:19:954 GMT] 00000002 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[9/7/26, 14:45:20:913 GMT] 0000002a com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults/keystore.xml
+[9/7/26, 14:45:20:927 GMT] 0000002a com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/cics.xml
+[9/7/26, 14:45:20:929 GMT] 0000002a com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/http-ssl-endpoint.xml
+[9/7/26, 14:45:20:930 GMT] 0000002a com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/server.xml
+[9/7/26, 14:45:20:931 GMT] 0000002a com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/tls.xml
+[9/7/26, 14:45:21:095 GMT] 00000002 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.467 seconds
+[9/7/26, 14:45:21:342 GMT] 00000035 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[9/7/26, 14:45:23:069 GMT] 00000029 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[9/7/26, 14:45:23:247 GMT] 0000002a com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[9/7/26, 14:45:23:249 GMT] 0000002a com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[9/7/26, 14:45:23:250 GMT] 0000002a com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[9/7/26, 14:45:23:245 GMT] 0000002c com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[9/7/26, 14:45:23:620 GMT] 0000002b org.jboss.weld.Version                                       I WELD-000900: 3.1.9 (Final)
+[9/7/26, 14:45:23:781 GMT] 00000031 com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: /opt/ibm/wlp/output/defaultServer/resources/security/key.p12 of type: PKCS12
+[9/7/26, 14:45:23:859 GMT] 00000029 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "java.lang.IllegalArgumentException: CWWKS4118E: LTPA configuration error. Add a keysPassword attribute to your <ltpa /> configuration, or set the 'ltpa_keys_password' or 'keystore_password' environment variables. com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl 151" at ffdc_26.09.07_14.45.23.0.log
+[9/7/26, 14:45:23:861 GMT] 00000029 om.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl E CWWKS4118E: LTPA configuration error. Add a keysPassword attribute to your <ltpa /> configuration, or set the 'ltpa_keys_password' or 'keystore_password' environment variables.
+[9/7/26, 14:45:23:881 GMT] 00000029 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been activated. 
+[9/7/26, 14:45:24:094 GMT] 00000029 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[9/7/26, 14:45:24:130 GMT] 00000029 com.ibm.ws.security.jwt.internal.ConsumerImpl                I CWWKS6012I: The JSON Web Token (JWT) consumer service is available.
+[9/7/26, 14:45:24:137 GMT] 00000029 com.ibm.ws.security.jwt.web.JwtEndpointServices              I CWWKS6002I: The JSON Web Token (JWT) endpoint service is available.
+[9/7/26, 14:45:24:505 GMT] 00000029 org.apache.aries.spifly.BaseActivator                        I Registered provider org.slf4j.jul.JULServiceProvider of service org.slf4j.spi.SLF4JServiceProvider in bundle slf4j.jdk14
+[9/7/26, 14:45:24:586 GMT] 00000029 com.ibm.ws.security.audit.source.AuditServiceImpl            I CWWKS5850I: The audit service is starting.
+[9/7/26, 14:45:24:591 GMT] 00000029 com.ibm.ws.security.audit.file.AuditFileHandler              I CWWKS5804I: The audit file handler service is starting.
+[9/7/26, 14:45:24:595 GMT] 00000029 com.ibm.ws.security.audit.source.AuditServiceImpl            I CWWKS5851I: The audit service is ready.
+[9/7/26, 14:45:24:599 GMT] 00000029 com.ibm.ws.security.audit.file.AuditFileHandler              I CWWKS5805I: The audit file handler service is ready.
+[9/7/26, 14:45:24:653 GMT] 00000029 .microprofile.metrics.internal.monitor.MonitorMetricsHandler I CWPMI2003I: Monitoring metrics can be retrieved through mpMetrics.
+[9/7/26, 14:45:24:929 GMT] 00000037 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: ibm/api.
+[9/7/26, 14:45:24:929 GMT] 00000036 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: health.
+[9/7/26, 14:45:24:929 GMT] 00000039 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: PrivateMicroProfileMetrics.
+[9/7/26, 14:45:24:931 GMT] 00000036 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module health has been bound to default_host.
+[9/7/26, 14:45:24:931 GMT] 00000037 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module ibm/api has been bound to default_host.
+[9/7/26, 14:45:24:931 GMT] 00000039 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module PrivateMicroProfileMetrics has been bound to default_host.
+[9/7/26, 14:45:24:932 GMT] 00000036 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/health/
+[9/7/26, 14:45:24:933 GMT] 00000037 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/ibm/api/
+[9/7/26, 14:45:24:933 GMT] 00000039 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/metrics/
+[9/7/26, 14:45:24:936 GMT] 0000003a com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.ws.security.jwt.
+[9/7/26, 14:45:24:936 GMT] 0000003a com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.ws.security.jwt has been bound to default_host.
+[9/7/26, 14:45:24:937 GMT] 0000003a com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/jwt/
+[9/7/26, 14:45:24:950 GMT] 00000037 om.ibm.ws.app.manager.rar.internal.RARApplicationHandlerImpl I J2CA7018I: Installing resource adapter gmoa.
+[9/7/26, 14:45:24:960 GMT] 00000036 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: OpenAPIUI.
+[9/7/26, 14:45:24:961 GMT] 00000036 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module OpenAPIUI has been bound to default_host.
+[9/7/26, 14:45:24:961 GMT] 00000036 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/openapi/ui/
+[9/7/26, 14:45:24:965 GMT] 00000039 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: MicroProfileOpenAPI.
+[9/7/26, 14:45:24:965 GMT] 00000039 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module MicroProfileOpenAPI has been bound to default_host.
+[9/7/26, 14:45:24:965 GMT] 00000039 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/openapi/
+[9/7/26, 14:45:25:030 GMT] 0000003b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/api
+[9/7/26, 14:45:25:030 GMT] 0000003a com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/health
+[9/7/26, 14:45:25:030 GMT] 00000036 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/metrics
+[9/7/26, 14:45:25:052 GMT] 0000003a com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:25:058 GMT] 00000036 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:25:058 GMT] 0000003b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:25:132 GMT] 00000036 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[9/7/26, 14:45:25:193 GMT] 0000003b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/jwt
+[9/7/26, 14:45:25:193 GMT] 0000003b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:25:195 GMT] 00000039 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 14:45:25:200 GMT] 00000039 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/openapi/ui
+[9/7/26, 14:45:25:200 GMT] 00000039 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:25:211 GMT] 0000003b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/openapi
+[9/7/26, 14:45:25:214 GMT] 0000003b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:25:218 GMT] 00000036 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.metrics.internal.private] [/metrics] [PrivateMetricsRESTProxyServlet]: Initialization successful.
+[9/7/26, 14:45:25:219 GMT] 0000003b com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.openapi.2.0.internal.servlet] [/openapi] [ApplicationServlet]: Initialization successful.
+[9/7/26, 14:45:25:224 GMT] 0000003a com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.1.internal] [/health] [HealthCheckReadinessServlet]: Initialization successful.
+[9/7/26, 14:45:25:225 GMT] 0000003a com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.1.internal] [/health] [HealthCheckServlet]: Initialization successful.
+[9/7/26, 14:45:25:226 GMT] 0000003a com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.1.internal] [/health] [HealthCheckStartupServlet]: Initialization successful.
+[9/7/26, 14:45:25:226 GMT] 0000003a com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [io.openliberty.microprofile.health.3.1.internal] [/health] [HealthCheckLivenessServlet]: Initialization successful.
+[9/7/26, 14:45:25:691 GMT] 00000037 org.hibernate.validator.internal.util.Version                I HV000001: Hibernate Validator 6.2.5.Final
+[9/7/26, 14:45:25:786 GMT] 00000037 com.ibm.j2ca.RAIMSTM                                         I AFC Version : 7.5.0.5_TF10
+[9/7/26, 14:45:25:789 GMT] 00000037 om.ibm.ws.app.manager.rar.internal.RARApplicationHandlerImpl A J2CA7001I: Resource adapter gmoa installed in 0.839 seconds.
+[9/7/26, 14:45:25:794 GMT] 00000037 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application zosconnect-ui.
+[9/7/26, 14:45:25:795 GMT] 00000036 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application zosconnect-ui-backend-db2.
+[9/7/26, 14:45:25:794 GMT] 0000003b com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application zosconnect-ui-backend.
+[9/7/26, 14:45:25:795 GMT] 0000003a com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application zosconnect-ui-backend-cics.
+[9/7/26, 14:45:25:795 GMT] 00000039 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application zosconnect-ui-backend-ims.
+[9/7/26, 14:45:25:796 GMT] 00000039 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The zosconnect-ui-backend-ims application at the /opt/ibm/zosconnect/lib/com.ibm.zosconnect.ui.backend.ims.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/zosconnect-ui-backend-ims.war directory.
+[9/7/26, 14:45:25:796 GMT] 0000003a bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The zosconnect-ui-backend-cics application at the /opt/ibm/zosconnect/lib/com.ibm.zosconnect.ui.backend.cics.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/zosconnect-ui-backend-cics.war directory.
+[9/7/26, 14:45:25:796 GMT] 00000036 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The zosconnect-ui-backend-db2 application at the /opt/ibm/zosconnect/lib/com.ibm.zosconnect.ui.backend.db2.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/zosconnect-ui-backend-db2.war directory.
+[9/7/26, 14:45:25:796 GMT] 0000003b bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The zosconnect-ui-backend application at the /opt/ibm/zosconnect/lib/com.ibm.zosconnect.ui.backend.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/zosconnect-ui-backend.war directory.
+[9/7/26, 14:45:25:796 GMT] 00000037 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The zosconnect-ui application at the /opt/ibm/zosconnect/lib/com.ibm.zosconnect.ui.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/zosconnect-ui.war directory.
+[9/7/26, 14:45:26:038 GMT] 00000037 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: z/OS Connect Designer.
+[9/7/26, 14:45:26:041 GMT] 00000037 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module z/OS Connect Designer has been bound to default_host.
+[9/7/26, 14:45:26:041 GMT] 00000037 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/zosConnect/designer/
+[9/7/26, 14:45:26:101 GMT] 00000037 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/zosConnect/designer
+[9/7/26, 14:45:26:102 GMT] 00000037 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:26:115 GMT] 00000037 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application zosconnect-ui started in 0.321 seconds.
+[9/7/26, 14:45:26:157 GMT] 00000037 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 14:45:27:420 GMT] 0000003a com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.zosconnect.ui.backend.cics.
+[9/7/26, 14:45:27:422 GMT] 0000003a com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.zosconnect.ui.backend.cics has been bound to default_host.
+[9/7/26, 14:45:27:422 GMT] 0000003a com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/zosConnect/designer/api/zosAssetProvider/cics-1.0/
+[9/7/26, 14:45:27:424 GMT] 00000036 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.zosconnect.ui.backend.db2.
+[9/7/26, 14:45:27:424 GMT] 00000036 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.zosconnect.ui.backend.db2 has been bound to default_host.
+[9/7/26, 14:45:27:424 GMT] 00000036 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/zosConnect/designer/api/zosAssetProvider/db2-1.0/
+[9/7/26, 14:45:27:425 GMT] 00000037 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/zosConnect/designer/api/zosAssetProvider/cics-1.0
+[9/7/26, 14:45:27:425 GMT] 00000037 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:27:426 GMT] 00000036 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/zosConnect/designer/api/zosAssetProvider/db2-1.0
+[9/7/26, 14:45:27:426 GMT] 00000036 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:27:426 GMT] 00000039 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.zosconnect.ui.backend.ims.
+[9/7/26, 14:45:27:426 GMT] 00000039 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.zosconnect.ui.backend.ims has been bound to default_host.
+[9/7/26, 14:45:27:427 GMT] 00000039 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/zosConnect/designer/api/zosAssetProvider/ims-1.0/
+[9/7/26, 14:45:27:438 GMT] 0000003a com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 14:45:27:441 GMT] 0000003a com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/zosConnect/designer/api/zosAssetProvider/ims-1.0
+[9/7/26, 14:45:27:441 GMT] 0000003a com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:27:443 GMT] 00000036 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application zosconnect-ui-backend-db2 started in 1.648 seconds.
+[9/7/26, 14:45:27:443 GMT] 00000037 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application zosconnect-ui-backend-cics started in 1.648 seconds.
+[9/7/26, 14:45:27:444 GMT] 0000003a com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application zosconnect-ui-backend-ims started in 1.648 seconds.
+[9/7/26, 14:45:27:466 GMT] 00000039 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 14:45:28:262 GMT] 0000003b com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.zosconnect.ui.backend.
+[9/7/26, 14:45:28:262 GMT] 0000003b com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.zosconnect.ui.backend has been bound to default_host.
+[9/7/26, 14:45:28:262 GMT] 0000003b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/zosConnect/designer/api/
+[9/7/26, 14:45:28:263 GMT] 00000036 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/zosConnect/designer/api
+[9/7/26, 14:45:28:263 GMT] 00000036 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 14:45:28:279 GMT] 0000003b com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 14:45:28:437 GMT] 00000036 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application zosconnect-ui-backend started in 2.643 seconds.
+[9/7/26, 14:45:28:460 GMT] 00000035 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv6) port 9080.
+[9/7/26, 14:45:28:462 GMT] 00000035 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host *  (IPv6) port 9443.
+[9/7/26, 14:45:28:484 GMT] 00000035 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0015I: The server has the following interim fixes active in the runtime: PH71719,OLGH34465,PH70352,PH71808,PH70798,PH71585,PH70078,PH70510,PH71631. For a full listing of installed fixes run: productInfo version --ifixes
+[9/7/26, 14:45:28:485 GMT] 00000035 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [appSecurity-2.0, audit-1.0, beanValidation-2.0, cdi-2.0, concurrent-1.0, distributedMap-1.0, el-3.0, jaxb-2.2, jaxrs-2.1, jaxrsClient-2.1, jca-1.7, jndi-1.0, json-1.0, jsonb-1.0, jsonp-1.1, jsp-2.3, jwt-1.0, monitor-1.0, mpConfig-2.0, mpContextPropagation-1.2, mpHealth-3.1, mpMetrics-3.0, mpOpenAPI-2.0, servlet-4.0, ssl-1.0, transportSecurity-1.0, zosconnect:cics-1.0, zosconnect:db2-1.0, zosconnect:designer-1.0, zosconnect:ims-1.0, zosconnect:zosConnect-3.0].
+[9/7/26, 14:45:28:486 GMT] 00000035 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 7.394 seconds.
+[9/7/26, 14:45:28:486 GMT] 00000035 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 8.859 seconds.
+[9/7/26, 14:45:28:536 GMT] 00000036 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 14:45:28:586 GMT] 00000036 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [zosconnect-ui-backend] [/zosConnect/designer/api] [com.ibm.zosconnect.ui.backend]: Initialization successful.
+[9/7/26, 14:45:31:515 GMT] 00000036 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [zosconnect-ui] [/zosConnect/designer] [DesignerServlet]: Initialization successful.
+[9/7/26, 14:45:32:271 GMT] 0000003a com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0091E: Unable to find file zosAsset.yaml within the import directory.
+[9/7/26, 14:45:32:456 GMT] 00000039 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 14:45:32:463 GMT] 00000039 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [zosconnect-ui-backend-cics] [/zosConnect/designer/api/zosAssetProvider/cics-1.0] [com.ibm.zosconnect.ui.backend.cics.WorkspaceApplication]: Initialization successful.
+[9/7/26, 14:45:32:521 GMT] 00000073 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 14:45:32:524 GMT] 00000073 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [zosconnect-ui-backend-db2] [/zosConnect/designer/api/zosAssetProvider/db2-1.0] [com.ibm.zosconnect.ui.backend.db2.WorkspaceApplication]: Initialization successful.
+[9/7/26, 14:45:32:582 GMT] 00000077 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 14:45:32:585 GMT] 00000077 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [zosconnect-ui-backend-ims] [/zosConnect/designer/api/zosAssetProvider/ims-1.0] [com.ibm.zosconnect.ui.backend.ims.WorkspaceApplication]: Initialization successful.
+[9/7/26, 14:45:35:927 GMT] 0000006d m.ibm.zosconnect.ui.backend.apiproject.TestApiProjectHandler I BAQW0071I: Successfully initialized monitoring of API project.
+[9/7/26, 14:45:36:450 GMT] 0000006e com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[9/7/26, 14:45:36:452 GMT] 0000006e com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/defaults/keystore.xml
+[9/7/26, 14:45:36:455 GMT] 0000006e com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/cics.xml
+[9/7/26, 14:45:36:455 GMT] 0000006e com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/http-ssl-endpoint.xml
+[9/7/26, 14:45:36:456 GMT] 0000006e com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/server.xml
+[9/7/26, 14:45:36:457 GMT] 0000006e com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/tls.xml
+[9/7/26, 14:45:36:483 GMT] 0000006e com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[9/7/26, 14:51:54:108 GMT] 0000021e com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0091E: Unable to find file zosAsset.yaml within the import directory.
+[9/7/26, 15:00:24:377 GMT] 000003d7 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:00:24:379 GMT] 000003d7 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:00:25:983 GMT] 000003d7 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:00:25:995 GMT] 000003d7 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:00:25:995 GMT] 000003d7 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:00:26:035 GMT] 000003d7 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:00:26:037 GMT] 000003d7 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:00:26:037 GMT] 000003d7 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:00:26:038 GMT] 000003d7 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:00:26:039 GMT] 000003c2 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:00:26:039 GMT] 000003c2 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:00:26:046 GMT] 000003c2 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 1.669 seconds.
+[9/7/26, 15:00:26:078 GMT] 000003c2 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:00:26:082 GMT] 000003c2 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:00:26:168 GMT] 000003e1 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:00:28:282 GMT] 000003c2 com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0091E: Unable to find file zosAsset.yaml within the import directory.
+[9/7/26, 15:00:43:664 GMT] 000003f8 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:00:43:666 GMT] 000003f8 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:00:43:691 GMT] 000003f8 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:00:43:711 GMT] 000003ac com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:00:44:863 GMT] 00000402 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:00:44:863 GMT] 00000402 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:00:45:380 GMT] 00000402 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:00:45:388 GMT] 00000402 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:00:45:388 GMT] 00000402 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:00:45:429 GMT] 00000402 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:00:45:430 GMT] 00000402 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:00:45:430 GMT] 00000402 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:00:45:431 GMT] 00000402 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:00:45:432 GMT] 000003e8 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:00:45:432 GMT] 000003e8 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:00:45:442 GMT] 000003e8 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.579 seconds.
+[9/7/26, 15:00:45:462 GMT] 000003e8 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:00:45:466 GMT] 000003b9 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:00:45:468 GMT] 000003e8 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:01:01:711 GMT] 00000406 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:01:715 GMT] 00000406 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:01:01:731 GMT] 00000406 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:01:01:789 GMT] 000003d9 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:02:888 GMT] 0000041c com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:01:02:889 GMT] 0000041c bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:01:03:221 GMT] 0000041c zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:01:03:237 GMT] 0000041c zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:01:03:237 GMT] 0000041c com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:01:03:248 GMT] 0000041c liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:01:03:250 GMT] 0000041c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:01:03:251 GMT] 0000041c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:01:03:251 GMT] 0000041c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:03:252 GMT] 00000406 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:01:03:252 GMT] 00000406 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:01:03:266 GMT] 00000406 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.378 seconds.
+[9/7/26, 15:01:03:297 GMT] 000003ac com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:03:299 GMT] 00000406 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:01:03:304 GMT] 00000406 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:01:10:650 GMT] 000003ac com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:10:651 GMT] 000003ac com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:01:10:656 GMT] 000003ac com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:01:10:670 GMT] 0000041c com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:11:343 GMT] 00000401 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:01:11:344 GMT] 00000401 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:01:11:613 GMT] 00000401 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:01:11:619 GMT] 00000401 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:01:11:619 GMT] 00000401 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:01:11:624 GMT] 00000401 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:01:11:624 GMT] 00000401 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:01:11:625 GMT] 00000401 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:01:11:625 GMT] 00000401 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:11:625 GMT] 00000427 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:01:11:625 GMT] 00000427 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:01:11:628 GMT] 00000427 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.285 seconds.
+[9/7/26, 15:01:11:636 GMT] 00000427 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:01:11:637 GMT] 00000435 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:11:641 GMT] 00000427 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:01:19:594 GMT] 00000418 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:19:595 GMT] 00000418 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:01:19:599 GMT] 00000418 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:01:19:611 GMT] 0000044f com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:20:277 GMT] 000003d9 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:01:20:278 GMT] 000003d9 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:01:20:518 GMT] 000003d9 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:01:20:527 GMT] 000003d9 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:01:20:527 GMT] 000003d9 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:01:20:534 GMT] 000003d9 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:01:20:536 GMT] 000003d9 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:01:20:536 GMT] 000003d9 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:01:20:537 GMT] 000003d9 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:20:537 GMT] 00000448 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:01:20:538 GMT] 00000448 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:01:20:548 GMT] 00000448 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.270 seconds.
+[9/7/26, 15:01:20:561 GMT] 00000448 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:01:20:560 GMT] 00000419 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:20:564 GMT] 00000448 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:01:27:275 GMT] 00000419 com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0091E: Unable to find file zosAsset.yaml within the import directory.
+[9/7/26, 15:01:37:955 GMT] 00000423 com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0018E: An error occurred attempting to delete z/OS Asset file import: java.io.FileNotFoundException: /workspace/project/src/main/zosAssets/import/zosAsset.yaml (No such file or directory)
+[9/7/26, 15:01:46:652 GMT] 00000471 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:46:654 GMT] 00000471 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:01:46:662 GMT] 00000471 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:01:46:699 GMT] 00000473 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:47:350 GMT] 00000465 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:01:47:352 GMT] 00000465 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:01:47:570 GMT] 00000465 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:01:47:575 GMT] 00000465 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:01:47:575 GMT] 00000465 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:01:47:600 GMT] 00000465 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:01:47:601 GMT] 00000465 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:01:47:602 GMT] 00000465 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:01:47:602 GMT] 00000465 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:01:47:603 GMT] 00000474 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:01:47:603 GMT] 00000474 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:01:47:609 GMT] 00000474 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.258 seconds.
+[9/7/26, 15:01:47:618 GMT] 0000047a com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:01:47:622 GMT] 00000474 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:01:47:627 GMT] 00000474 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:04:00:287 GMT] 000004b5 com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0091E: Unable to find file zosAsset.yaml within the import directory.
+[9/7/26, 15:04:19:573 GMT] 0000048d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:04:19:574 GMT] 0000048d com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:04:19:579 GMT] 0000048d com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:04:19:602 GMT] 00000518 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:04:20:780 GMT] 0000051c com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:04:20:781 GMT] 0000051c bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:04:20:970 GMT] 0000051c zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:04:20:975 GMT] 0000051c zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:04:20:975 GMT] 0000051c com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:04:20:995 GMT] 0000051c liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:04:20:996 GMT] 0000051c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:04:20:996 GMT] 0000051c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:04:20:997 GMT] 0000051c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:04:20:997 GMT] 000004f5 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:04:20:997 GMT] 000004f5 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:04:21:000 GMT] 000004f5 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.220 seconds.
+[9/7/26, 15:04:21:010 GMT] 00000526 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:04:21:011 GMT] 000004f5 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:04:21:017 GMT] 000004f5 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:07:28:869 GMT] 00000609 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:07:28:871 GMT] 00000609 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:07:28:878 GMT] 00000609 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:07:28:905 GMT] 000005f1 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:07:29:549 GMT] 00000580 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:07:29:550 GMT] 00000580 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:07:29:731 GMT] 00000580 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:07:29:737 GMT] 00000580 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:07:29:737 GMT] 00000580 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:07:29:742 GMT] 00000580 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:07:29:742 GMT] 00000580 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:07:29:742 GMT] 00000580 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:07:29:743 GMT] 00000580 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:07:29:743 GMT] 000005a4 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:07:29:743 GMT] 000005a4 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:07:29:748 GMT] 000005a4 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.198 seconds.
+[9/7/26, 15:07:29:757 GMT] 000005a4 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:07:29:758 GMT] 000005ee com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:07:29:760 GMT] 000005a4 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:14:37:419 GMT] 000007d3 com.ibm.zosconnect.ui.backend.workspace.ZosAssetManager      E BAQW0091E: Unable to find file zosAsset.yaml within the import directory.
+[9/7/26, 15:14:50:478 GMT] 00000806 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:14:50:479 GMT] 00000806 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:14:50:489 GMT] 00000806 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:14:50:506 GMT] 0000080a com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:14:51:174 GMT] 000007e8 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:14:51:177 GMT] 000007e8 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:14:51:382 GMT] 000007e8 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:14:51:386 GMT] 000007e8 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:14:51:387 GMT] 000007e8 com.ibm.zosconnect.engine.impl.ZosAssetManagerImpl           E BAQR1622E: Failed to read WEB-INF/src/main/zosAssets/import/zosAsset.yaml. The file does not exist.
+[9/7/26, 15:14:51:391 GMT] 000007e8 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:14:51:392 GMT] 000007e8 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:14:51:392 GMT] 000007e8 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:14:51:392 GMT] 000007e8 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:14:51:393 GMT] 000007fe com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:14:51:396 GMT] 000007fe com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:14:51:402 GMT] 000007fe com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.227 seconds.
+[9/7/26, 15:14:51:404 GMT] 000007e8 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:14:51:411 GMT] 000007fe apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:14:51:414 GMT] 000007fe com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:23:42:908 GMT] 00000a6d com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "java.net.UnknownHostException: cics-not-connected: Name or service not known com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager 131" at ffdc_26.09.07_15.23.42.0.log
+[9/7/26, 15:23:42:910 GMT] 00000a6d com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 15:25:12:276 GMT] 00000ad1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:25:12:278 GMT] 00000ad1 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:25:12:284 GMT] 00000ad1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:25:12:287 GMT] 00000ad1 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:25:12:287 GMT] 00000ad1 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:25:12:297 GMT] 00000ab3 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:25:12:470 GMT] 00000ad1 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:25:12:477 GMT] 00000ad1 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:25:12:492 GMT] 00000ad1 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:25:12:493 GMT] 00000ad1 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:25:12:493 GMT] 00000ad1 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:25:12:493 GMT] 00000ad1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:25:12:494 GMT] 00000ab5 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:25:12:495 GMT] 00000ab5 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:25:12:503 GMT] 00000ab5 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application api updated in 0.216 seconds.
+[9/7/26, 15:25:12:510 GMT] 00000ad1 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:25:12:514 GMT] 00000ab5 apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:25:12:524 GMT] 00000ab5 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:25:38:856 GMT] 00000aec com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:25:38:857 GMT] 00000aec com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 15:25:38:860 GMT] 00000aec com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 15:25:38:873 GMT] 00000af3 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:25:39:559 GMT] 00000a67 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 15:25:39:559 GMT] 00000a67 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 15:25:39:729 GMT] 00000a67 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 15:25:39:734 GMT] 00000a67 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 15:25:39:747 GMT] 00000a67 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 15:25:39:748 GMT] 00000a67 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 15:25:39:748 GMT] 00000a67 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 15:25:39:748 GMT] 00000a67 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 15:25:39:749 GMT] 00000afc com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 15:25:39:749 GMT] 00000afc com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 15:25:39:752 GMT] 00000afc com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.192 seconds.
+[9/7/26, 15:25:39:758 GMT] 00000afc apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 15:25:39:760 GMT] 00000ae8 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 15:25:39:762 GMT] 00000afc com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 15:30:34:669 GMT] 00000c22 com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 15:30:34:706 GMT] 00000c3e com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "java.net.UnknownHostException: cics-not-connected com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager 131" at ffdc_26.09.07_15.30.34.0.log
+[9/7/26, 15:30:34:706 GMT] 00000c3e com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 15:30:34:724 GMT] 00000c47 com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:15:51:482 GMT] 0000146b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 16:15:51:484 GMT] 0000146b com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 16:15:51:495 GMT] 0000146b com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 16:15:51:524 GMT] 00001458 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 16:15:52:184 GMT] 0000146b com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 16:15:52:185 GMT] 0000146b bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 16:15:52:369 GMT] 0000146b zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 16:15:52:382 GMT] 0000146b zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 16:15:52:389 GMT] 0000146b liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 16:15:52:390 GMT] 0000146b com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 16:15:52:390 GMT] 0000146b com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 16:15:52:390 GMT] 0000146b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 16:15:52:391 GMT] 0000147f com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 16:15:52:391 GMT] 0000147f com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 16:15:52:396 GMT] 0000147f com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.212 seconds.
+[9/7/26, 16:15:52:410 GMT] 0000147a com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 16:15:52:411 GMT] 0000147f apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 16:15:52:417 GMT] 0000147f com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 16:21:42:761 GMT] 0000153e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 16:21:42:762 GMT] 0000153e com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 16:21:42:766 GMT] 0000153e com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 16:21:42:780 GMT] 00001611 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 16:21:43:466 GMT] 00001606 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 16:21:43:467 GMT] 00001606 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 16:21:43:652 GMT] 00001606 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 16:21:43:656 GMT] 00001606 zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 16:21:43:668 GMT] 00001606 liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 16:21:43:669 GMT] 00001606 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 16:21:43:669 GMT] 00001606 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 16:21:43:669 GMT] 00001606 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 16:21:43:669 GMT] 000015fb com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 16:21:43:669 GMT] 000015fb com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 16:21:43:673 GMT] 000015fb com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.207 seconds.
+[9/7/26, 16:21:43:679 GMT] 000015cf com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 16:21:43:682 GMT] 000015fb apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 16:21:43:685 GMT] 000015fb com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.
+[9/7/26, 16:22:00:627 GMT] 00001610 com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:28:25:111 GMT] 000017ab com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:35:28:467 GMT] 000019ab com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:35:28:493 GMT] 000019af com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:35:28:508 GMT] 00001976 com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:35:28:519 GMT] 00001959 com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager  E BAQR0691E: Unknown host cics-not-connected specified for CICS connection cicsConn.
+[9/7/26, 16:35:28:534 GMT] 000019b0 nnect.wv.transaction.messages.walkers.JSONToByteArrayVisitor E BAQR1801E: A data type conversion error occurred while field VRCB0130-COMMAREA.VRCB0130-INQUIRY-ID was converted for z/OS Asset: VRCB0130, API: api, API path: /customers/DOESNOTEXIST, API method: GET: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10..
+[9/7/26, 16:35:28:556 GMT] 000019b0 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalkerException: BAQR1801E: A data type conversion error occurred while field VRCB0130-COMMAREA.VRCB0130-INQUIRY-ID was converted for z/OS Asset: VRCB0130, API: api, API path: /customers/DOESNOTEXIST, API method: GET: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10.. com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform 159" at ffdc_26.09.07_16.35.28.0.log
+[9/7/26, 16:35:28:566 GMT] 000019b3 nnect.wv.transaction.messages.walkers.JSONToByteArrayVisitor E BAQR1801E: A data type conversion error occurred while field VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-ID was converted for z/OS Asset: VRCB0100, API: api, API path: /customers/DOESNOTEXIST, API method: PUT: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10..
+[9/7/26, 16:35:28:583 GMT] 000019b3 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalkerException: BAQR1801E: A data type conversion error occurred while field VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-ID was converted for z/OS Asset: VRCB0100, API: api, API path: /customers/DOESNOTEXIST, API method: PUT: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10.. com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform 159" at ffdc_26.09.07_16.35.28.1.log
+[9/7/26, 16:35:49:838 GMT] 000019cb com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://02db3501d6ac:9080/
+[9/7/26, 16:35:49:839 GMT] 000019cb com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [api] [/] [{{oasTitle}}]: Destroy successful.
+[9/7/26, 16:35:49:844 GMT] 000019cb com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application api has stopped successfully.
+[9/7/26, 16:35:49:856 GMT] 00001974 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 16:35:50:542 GMT] 000019cb com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application api.
+[9/7/26, 16:35:50:543 GMT] 000019cb bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0133I: The api application at the /opt/ibm/wlp/usr/servers/defaultServer/dropins/api.war location is being expanded to the /opt/ibm/wlp/usr/servers/defaultServer/apps/expanded/api.war directory.
+[9/7/26, 16:35:50:713 GMT] 000019cb zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0130
+[9/7/26, 16:35:50:716 GMT] 000019cb zosasset.cics.internal.factories.CicsCommareaZosAssetFactory I BAQR1753I: Loaded CICS COMMAREA z/OS Asset VRCB0100
+[9/7/26, 16:35:50:719 GMT] 000019cb liberty.microprofile.openapi20.internal.ApplicationProcessor I CWWKO1660I: The application api was processed and an OpenAPI document was produced.
+[9/7/26, 16:35:50:720 GMT] 000019cb com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: api.
+[9/7/26, 16:35:50:720 GMT] 000019cb com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module api has been bound to default_host.
+[9/7/26, 16:35:50:720 GMT] 000019cb com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://02db3501d6ac:9080/
+[9/7/26, 16:35:50:721 GMT] 000019cf com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[9/7/26, 16:35:50:721 GMT] 000019cf com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/7/26, 16:35:50:723 GMT] 000019cf com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application api started in 0.181 seconds.
+[9/7/26, 16:35:50:728 GMT] 000019c2 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /opt/ibm/wlp/output/defaultServer/logs/state/plugin-cfg.xml.
+[9/7/26, 16:35:50:730 GMT] 000019cf apache.cxf.cxf.core.3.2:1.0.111.cl260320260625-2008(id=110)] I Setting the server's publish address to be /
+[9/7/26, 16:35:50:732 GMT] 000019cf com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [api] [/] [{{oasTitle}}]: Initialization successful.

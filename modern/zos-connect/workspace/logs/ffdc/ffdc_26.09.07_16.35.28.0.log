@@ -1,0 +1,245 @@
+------Start of DE processing------ = [9/7/26, 16:35:28:535 GMT ]
+Exception = com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalkerException
+Source = com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform
+probeid = 159
+Stack Dump = com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalkerException: BAQR1801E: A data type conversion error occurred while field VRCB0130-COMMAREA.VRCB0130-INQUIRY-ID was converted for z/OS Asset: VRCB0130, API: api, API path: /customers/DOESNOTEXIST, API method: GET: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10..
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalkerException$Builder.build(MessageWalkerException.java:168)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.JSONToByteArrayVisitor.leafField(JSONToByteArrayVisitor.java:606)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalker.walkField(MessageWalker.java:248)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalker.walkField(MessageWalker.java:234)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalker.walkSegmentType(MessageWalker.java:148)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalker.walkMessageType(MessageWalker.java:136)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalker.accept(MessageWalker.java:74)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.MessageWalker.accept(MessageWalker.java:67)
+	at com.ibm.zosconnect.zosasset.cics.internal.WvTransform.transformJsonToBytes(WvTransform.java:48)
+	at com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform.transformJsonToCommarea(WvCommareaTransform.java:88)
+	at com.ibm.zosconnect.zosasset.cics.internal.CicsCommareaZosAsset.invoke(CicsCommareaZosAsset.java:91)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl.invokeEndpoint(ProviderInvokeOperationImpl.java:518)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl.processOperationImpl(ProviderInvokeOperationImpl.java:239)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl.processOperation(ProviderInvokeOperationImpl.java:131)
+	at com.ibm.zosconnect.engine.impl.ProviderInvokeOperationImpl$Proxy$_$$_WeldClientProxy.processOperation(Unknown Source)
+	at com.ibm.zosconnect.api.CustomersApi.getCustomer(CustomersApi.java:97)
+	at com.ibm.zosconnect.api.CustomersApi$Proxy$_$$_WeldSubclass.getCustomer$$super(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.jboss.weld.interceptor.proxy.TerminalAroundInvokeInvocationContext.proceedInternal(TerminalAroundInvokeInvocationContext.java:51)
+	at org.jboss.weld.interceptor.proxy.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:78)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.SimplyTimedInterceptor.simplyTimedCallable(SimplyTimedInterceptor.java:101)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.SimplyTimedInterceptor.timedMethod(SimplyTimedInterceptor.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.jboss.weld.interceptor.reader.SimpleInterceptorInvocation$SimpleMethodInvocation.invoke(SimpleInterceptorInvocation.java:73)
+	at org.jboss.weld.interceptor.proxy.NonTerminalAroundInvokeInvocationContext.proceedInternal(NonTerminalAroundInvokeInvocationContext.java:66)
+	at org.jboss.weld.interceptor.proxy.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:78)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.CountedInterceptor.countedCallable(CountedInterceptor.java:99)
+	at io.openliberty.microprofile.metrics.internal.cdi30.interceptors.CountedInterceptor.countedMethod(CountedInterceptor.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at org.jboss.weld.interceptor.reader.SimpleInterceptorInvocation$SimpleMethodInvocation.invoke(SimpleInterceptorInvocation.java:73)
+	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeAroundInvoke(InterceptorMethodHandler.java:84)
+	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeInterception(InterceptorMethodHandler.java:72)
+	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.invoke(InterceptorMethodHandler.java:56)
+	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:79)
+	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:68)
+	at com.ibm.zosconnect.api.CustomersApi$Proxy$_$$_WeldSubclass.getCustomer(Unknown Source)
+	at com.ibm.zosconnect.api.CustomersApi$Proxy$_$$_WeldClientProxy.getCustomer(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:571)
+	at com.ibm.ws.jaxrs20.cdi.component.JaxRsFactoryImplicitBeanCDICustomizer.serviceInvoke(JaxRsFactoryImplicitBeanCDICustomizer.java:352)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:642)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:161)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:101)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:276)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:213)
+	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:460)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:112)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:69)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:120)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:325)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:129)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:278)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:139)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:148)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:114)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:98)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at io.openliberty.http.monitor.ServletFilter.doFilter(ServletFilter.java:77)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.zosconnect.provider.ApiFilter.doFilter(ApiFilter.java:44)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:5106)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:328)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1047)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1563)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:761)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:721)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:332)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:169)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:77)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1485)
+Caused by: com.ibm.ims.dli.types.UnsupportedTypeConversion: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10.
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.WVStringConverter.internalWriteObject(WVStringConverter.java:543)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.WVStringConverter.writeObject(WVStringConverter.java:183)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.JSONToByteArrayVisitor.convertJsonFieldValue(JSONToByteArrayVisitor.java:682)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.JSONToByteArrayVisitor.leafField(JSONToByteArrayVisitor.java:577)
+	... 92 more
+Caused by: java.lang.IllegalArgumentException: IWAA1111E: String DOESNOTEXIST exceeds maximum length of 10.
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.WVMarshallStringUtils.marshallFixedLengthStringIntoBuffer(WVMarshallStringUtils.java:253)
+	at com.ibm.zosconnect.wv.transaction.messages.walkers.WVStringConverter.internalWriteObject(WVStringConverter.java:457)
+	... 95 more
+
+Dump of callerThis
+Object type = com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform
+  copyright_notice = "
+IBM Confidential. PID 5655-CE5. Copyright IBM Corp. 2023
+"
+  tc = class com.ibm.websphere.ras.TraceComponent@fecabaf1
+    strings[0] = "TraceComponent[com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform,class com.ibm.zosconnect.zosasset.cics.internal.WvCommareaTransform,[zosConnectCics],com.ibm.zosconnect.zosasset.cics.internal.resources.CicsMessages,null]"
+  REQUEST_DAI_FILENAME = "request.dai"
+  RESPONSE_DAI_FILENAME = "response.dai"
+  requestMessage = class com.ibm.zosconnect.wv.metadata.transaction.Message@b2f76a1a
+    message = class com.ibm.zosconnect.wv.metadata.transaction.MessageType@2de9eef7
+      remarks = null
+      segment = class java.util.ArrayList@d37279ad
+      id = class java.math.BigInteger@9b7becc8
+      name = null
+      messageVersion = null
+    transactionCode = null
+    messageName = null
+    direction = class java.math.BigInteger@e7790a5d
+      signum = "/* Could not access signum */"
+      mag = "/* Could not access mag */"
+      bitCountPlusOne = "/* Could not access bitCountPlusOne */"
+      magBitLengthPlusOne = "/* Could not access magBitLengthPlusOne */"
+      lowestSetBitPlusTwo = "/* Could not access lowestSetBitPlusTwo */"
+      numberOfTrailingZeroIntsPlusTwo = "/* Could not access numberOfTrailingZeroIntsPlusTwo */"
+      LONG_MASK = "/* Could not access LONG_MASK */"
+      MAX_MAG_LENGTH = "/* Could not access MAX_MAG_LENGTH */"
+      PRIME_SEARCH_BIT_LENGTH_LIMIT = "/* Could not access PRIME_SEARCH_BIT_LENGTH_LIMIT */"
+      KARATSUBA_THRESHOLD = "/* Could not access KARATSUBA_THRESHOLD */"
+      TOOM_COOK_THRESHOLD = "/* Could not access TOOM_COOK_THRESHOLD */"
+      KARATSUBA_SQUARE_THRESHOLD = "/* Could not access KARATSUBA_SQUARE_THRESHOLD */"
+      TOOM_COOK_SQUARE_THRESHOLD = "/* Could not access TOOM_COOK_SQUARE_THRESHOLD */"
+      BURNIKEL_ZIEGLER_THRESHOLD = "/* Could not access BURNIKEL_ZIEGLER_THRESHOLD */"
+      BURNIKEL_ZIEGLER_OFFSET = "/* Could not access BURNIKEL_ZIEGLER_OFFSET */"
+      SCHOENHAGE_BASE_CONVERSION_THRESHOLD = "/* Could not access SCHOENHAGE_BASE_CONVERSION_THRESHOLD */"
+      MULTIPLY_SQUARE_THRESHOLD = "/* Could not access MULTIPLY_SQUARE_THRESHOLD */"
+      MONTGOMERY_INTRINSIC_THRESHOLD = "/* Could not access MONTGOMERY_INTRINSIC_THRESHOLD */"
+      bitsPerDigit = "/* Could not access bitsPerDigit */"
+      SMALL_PRIME_THRESHOLD = "/* Could not access SMALL_PRIME_THRESHOLD */"
+      DEFAULT_PRIME_CERTAINTY = "/* Could not access DEFAULT_PRIME_CERTAINTY */"
+      SMALL_PRIME_PRODUCT = "/* Could not access SMALL_PRIME_PRODUCT */"
+      MAX_CONSTANT = "/* Could not access MAX_CONSTANT */"
+      posConst = "/* Could not access posConst */"
+      negConst = "/* Could not access negConst */"
+      powerCache = "/* Could not access powerCache */"
+      logCache = "/* Could not access logCache */"
+      LOG_TWO = "/* Could not access LOG_TWO */"
+      ZERO = class java.math.BigInteger@777e9cb5
+      ONE = class java.math.BigInteger@ef357554
+      TWO = class java.math.BigInteger@40fb8116
+      NEGATIVE_ONE = "/* Could not access NEGATIVE_ONE */"
+      TEN = class java.math.BigInteger@5b9bdc4d
+      bnExpModThreshTable = "/* Could not access bnExpModThreshTable */"
+      NUM_ZEROS = "/* Could not access NUM_ZEROS */"
+      ZEROS = "/* Could not access ZEROS */"
+      digitsPerLong = "/* Could not access digitsPerLong */"
+      longRadix = "/* Could not access longRadix */"
+      digitsPerInt = "/* Could not access digitsPerInt */"
+      intRadix = "/* Could not access intRadix */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    messageVersion = null
+    version = null
+    modifiedBy = null
+    modifiedTime = null
+    serviceType = null
+  responseMessage = class com.ibm.zosconnect.wv.metadata.transaction.Message@c6b07a0
+    message = class com.ibm.zosconnect.wv.metadata.transaction.MessageType@cdfd300
+      remarks = null
+      segment = class java.util.ArrayList@b6c99807
+      id = class java.math.BigInteger@7d97a8eb
+      name = null
+      messageVersion = null
+    transactionCode = null
+    messageName = null
+    direction = class java.math.BigInteger@a4a53832
+      signum = "/* Could not access signum */"
+      mag = "/* Could not access mag */"
+      bitCountPlusOne = "/* Could not access bitCountPlusOne */"
+      magBitLengthPlusOne = "/* Could not access magBitLengthPlusOne */"
+      lowestSetBitPlusTwo = "/* Could not access lowestSetBitPlusTwo */"
+      numberOfTrailingZeroIntsPlusTwo = "/* Could not access numberOfTrailingZeroIntsPlusTwo */"
+      LONG_MASK = "/* Could not access LONG_MASK */"
+      MAX_MAG_LENGTH = "/* Could not access MAX_MAG_LENGTH */"
+      PRIME_SEARCH_BIT_LENGTH_LIMIT = "/* Could not access PRIME_SEARCH_BIT_LENGTH_LIMIT */"
+      KARATSUBA_THRESHOLD = "/* Could not access KARATSUBA_THRESHOLD */"
+      TOOM_COOK_THRESHOLD = "/* Could not access TOOM_COOK_THRESHOLD */"
+      KARATSUBA_SQUARE_THRESHOLD = "/* Could not access KARATSUBA_SQUARE_THRESHOLD */"
+      TOOM_COOK_SQUARE_THRESHOLD = "/* Could not access TOOM_COOK_SQUARE_THRESHOLD */"
+      BURNIKEL_ZIEGLER_THRESHOLD = "/* Could not access BURNIKEL_ZIEGLER_THRESHOLD */"
+      BURNIKEL_ZIEGLER_OFFSET = "/* Could not access BURNIKEL_ZIEGLER_OFFSET */"
+      SCHOENHAGE_BASE_CONVERSION_THRESHOLD = "/* Could not access SCHOENHAGE_BASE_CONVERSION_THRESHOLD */"
+      MULTIPLY_SQUARE_THRESHOLD = "/* Could not access MULTIPLY_SQUARE_THRESHOLD */"
+      MONTGOMERY_INTRINSIC_THRESHOLD = "/* Could not access MONTGOMERY_INTRINSIC_THRESHOLD */"
+      bitsPerDigit = "/* Could not access bitsPerDigit */"
+      SMALL_PRIME_THRESHOLD = "/* Could not access SMALL_PRIME_THRESHOLD */"
+      DEFAULT_PRIME_CERTAINTY = "/* Could not access DEFAULT_PRIME_CERTAINTY */"
+      SMALL_PRIME_PRODUCT = "/* Could not access SMALL_PRIME_PRODUCT */"
+      MAX_CONSTANT = "/* Could not access MAX_CONSTANT */"
+      posConst = "/* Could not access posConst */"
+      negConst = "/* Could not access negConst */"
+      powerCache = "/* Could not access powerCache */"
+      logCache = "/* Could not access logCache */"
+      LOG_TWO = "/* Could not access LOG_TWO */"
+      ZERO = class java.math.BigInteger@777e9cb5
+      ONE = class java.math.BigInteger@ef357554
+      TWO = class java.math.BigInteger@40fb8116
+      NEGATIVE_ONE = "/* Could not access NEGATIVE_ONE */"
+      TEN = class java.math.BigInteger@5b9bdc4d
+      bnExpModThreshTable = "/* Could not access bnExpModThreshTable */"
+      NUM_ZEROS = "/* Could not access NUM_ZEROS */"
+      ZEROS = "/* Could not access ZEROS */"
+      digitsPerLong = "/* Could not access digitsPerLong */"
+      longRadix = "/* Could not access longRadix */"
+      digitsPerInt = "/* Could not access digitsPerInt */"
+      intRadix = "/* Could not access intRadix */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    messageVersion = null
+    version = null
+    modifiedBy = null
+    modifiedTime = null
+    serviceType = null
+  serialVersionUID = -4239645454821408896
+  copyright_notice = "
+IBM Confidential. PID 5655-CE5. Copyright IBM Corp. 2023
+"
+  tc = class com.ibm.websphere.ras.TraceComponent@636da509
+    strings[0] = "TraceComponent[com.ibm.zosconnect.zosasset.cics.internal.WvTransform,class com.ibm.zosconnect.zosasset.cics.internal.WvTransform,[zosConnectCics],com.ibm.zosconnect.zosasset.cics.internal.resources.CicsMessages,null]"
+  serialVersionUID = -8056771970475021946
+

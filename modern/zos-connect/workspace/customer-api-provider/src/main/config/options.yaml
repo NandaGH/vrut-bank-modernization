@@ -1,0 +1,9 @@
+projectType: provider
+provider: CICS
+language: COBOL
+program: VRCB0100
+programInterface: CHANNEL
+ccsid: 37
+connectionRef: cicsConn
+providerPrefix: VRC
+providerExtension: cpy

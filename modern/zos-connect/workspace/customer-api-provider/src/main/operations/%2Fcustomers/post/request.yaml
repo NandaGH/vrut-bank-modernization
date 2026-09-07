@@ -1,0 +1,45 @@
+---
+version: "1.2"
+mappings:
+- commarea:
+    mappings:
+    - VRCB10-COMMAREA:
+        required: false
+        nullable: false
+        mappings:
+        - VRCB10-CUSTOMER-RECORD:
+            required: false
+            nullable: false
+            mappings:
+            - VRCB10-CUSTOMER-IDENTITY:
+                required: false
+                nullable: false
+                mappings:
+                - VRCB10-CUSTOMER-FIRST-NAME:
+                    required: false
+                    nullable: false
+                    template: "{{$body.firstName}}"
+                - VRCB10-CUSTOMER-LAST-NAME:
+                    required: false
+                    nullable: false
+                    template: "{{$body.lastName}}"
+            - VRCB10-CUSTOMER-ADDRESS:
+                required: false
+                nullable: false
+                mappings:
+                - VRCB10-ADDR-LINE-1:
+                    required: false
+                    nullable: false
+                    template: "{{$body.addressLine1}}"
+                - VRCB10-CITY:
+                    required: false
+                    nullable: false
+                    template: "{{$body.city}}"
+                - VRCB10-STATE:
+                    required: false
+                    nullable: false
+                    template: "{{$body.state}}"
+                - VRCB10-PINCODE:
+                    required: false
+                    nullable: false
+                    template: "{{$body.pinCode}}"

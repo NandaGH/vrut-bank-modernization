@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:message xmlns:ns2="http://www.ibm.com/ims/Transaction" direction="0">
+    <message id="1">
+        <segment id="1">
+            <field name="VRCB10-COMMAREA" originalName="VRCB10-COMMAREA" included="Y" path="VRCB10-COMMAREA" fileName="VRCB0100-COMMAREA.cpy" structureIndex="0" structSrcFileName="VRCB10-COMMAREA_request_0.cpy" srcLine="01 VRCB10-COMMAREA.">
+                <startPos>1</startPos>
+                <bytes>490</bytes>
+                <maxBytes>490</maxBytes>
+                <applicationDatatype datatype="STRUCT"/>
+                <field name="VRCB10-CUSTOMER-RECORD" originalName="VRCB10-CUSTOMER-RECORD" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD" srcLine="05 VRCB10-CUSTOMER-RECORD.">
+                    <startPos>1</startPos>
+                    <bytes>425</bytes>
+                    <maxBytes>425</maxBytes>
+                    <applicationDatatype datatype="STRUCT"/>
+                    <field name="VRCB10-CUSTOMER-IDENTITY" originalName="VRCB10-CUSTOMER-IDENTITY" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY" srcLine="10 VRCB10-CUSTOMER-IDENTITY.">
+                        <startPos>1</startPos>
+                        <bytes>118</bytes>
+                        <maxBytes>118</maxBytes>
+                        <applicationDatatype datatype="STRUCT"/>
+                        <field name="VRCB10-CUSTOMER-ID" originalName="VRCB10-CUSTOMER-ID" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-ID" srcLine="15 VRCB10-CUSTOMER-ID PIC X(10) USAGE DISPLAY.">
+                            <startPos>1</startPos>
+                            <bytes>10</bytes>
+                            <maxBytes>10</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-TYPE" originalName="VRCB10-CUSTOMER-TYPE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-TYPE" srcLine="15 VRCB10-CUSTOMER-TYPE PIC X(2) USAGE DISPLAY.">
+                            <startPos>11</startPos>
+                            <bytes>2</bytes>
+                            <maxBytes>2</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-TITLE" originalName="VRCB10-CUSTOMER-TITLE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-TITLE" srcLine="15 VRCB10-CUSTOMER-TITLE PIC X(5) USAGE DISPLAY.">
+                            <startPos>13</startPos>
+                            <bytes>5</bytes>
+                            <maxBytes>5</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-FIRST-NAME" originalName="VRCB10-CUSTOMER-FIRST-NAME" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-FIRST-NAME" srcLine="15 VRCB10-CUSTOMER-FIRST-NAME PIC X(30) USAGE DISPLAY.">
+                            <startPos>18</startPos>
+                            <bytes>30</bytes>
+                            <maxBytes>30</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-MIDDLE-NAME" originalName="VRCB10-CUSTOMER-MIDDLE-NAME" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-MIDDLE-NAME" srcLine="15 VRCB10-CUSTOMER-MIDDLE-NAME PIC X(30) USAGE DISPLAY.">
+                            <startPos>48</startPos>
+                            <bytes>30</bytes>
+                            <maxBytes>30</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-LAST-NAME" originalName="VRCB10-CUSTOMER-LAST-NAME" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-LAST-NAME" srcLine="15 VRCB10-CUSTOMER-LAST-NAME PIC X(30) USAGE DISPLAY.">
+                            <startPos>78</startPos>
+                            <bytes>30</bytes>
+                            <maxBytes>30</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-GENDER" originalName="VRCB10-CUSTOMER-GENDER" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-GENDER" srcLine="15 VRCB10-CUSTOMER-GENDER PIC X USAGE DISPLAY.">
+                            <startPos>108</startPos>
+                            <bytes>1</bytes>
+                            <maxBytes>1</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-DOB" originalName="VRCB10-CUSTOMER-DOB" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-IDENTITY.VRCB10-CUSTOMER-DOB" srcLine="15 VRCB10-CUSTOMER-DOB PIC X(10) USAGE DISPLAY.">
+                            <startPos>109</startPos>
+                            <bytes>10</bytes>
+                            <maxBytes>10</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                    </field>
+                    <field name="VRCB10-CUSTOMER-CONTACT" originalName="VRCB10-CUSTOMER-CONTACT" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-CONTACT" srcLine="10 VRCB10-CUSTOMER-CONTACT.">
+                        <startPos>119</startPos>
+                        <bytes>70</bytes>
+                        <maxBytes>70</maxBytes>
+                        <applicationDatatype datatype="STRUCT"/>
+                        <field name="VRCB10-CUSTOMER-MOBILE" originalName="VRCB10-CUSTOMER-MOBILE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-CONTACT.VRCB10-CUSTOMER-MOBILE" srcLine="15 VRCB10-CUSTOMER-MOBILE PIC X(10) USAGE DISPLAY.">
+                            <startPos>119</startPos>
+                            <bytes>10</bytes>
+                            <maxBytes>10</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CUSTOMER-EMAIL" originalName="VRCB10-CUSTOMER-EMAIL" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-CONTACT.VRCB10-CUSTOMER-EMAIL" srcLine="15 VRCB10-CUSTOMER-EMAIL PIC X(60) USAGE DISPLAY.">
+                            <startPos>129</startPos>
+                            <bytes>60</bytes>
+                            <maxBytes>60</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                    </field>
+                    <field name="VRCB10-CUSTOMER-ADDRESS" originalName="VRCB10-CUSTOMER-ADDRESS" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS" srcLine="10 VRCB10-CUSTOMER-ADDRESS.">
+                        <startPos>189</startPos>
+                        <bytes>196</bytes>
+                        <maxBytes>196</maxBytes>
+                        <applicationDatatype datatype="STRUCT"/>
+                        <field name="VRCB10-ADDR-LINE-1" originalName="VRCB10-ADDR-LINE-1" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS.VRCB10-ADDR-LINE-1" srcLine="15 VRCB10-ADDR-LINE-1 PIC X(50) USAGE DISPLAY.">
+                            <startPos>189</startPos>
+                            <bytes>50</bytes>
+                            <maxBytes>50</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-ADDR-LINE-2" originalName="VRCB10-ADDR-LINE-2" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS.VRCB10-ADDR-LINE-2" srcLine="15 VRCB10-ADDR-LINE-2 PIC X(50) USAGE DISPLAY.">
+                            <startPos>239</startPos>
+                            <bytes>50</bytes>
+                            <maxBytes>50</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CITY" originalName="VRCB10-CITY" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS.VRCB10-CITY" srcLine="15 VRCB10-CITY PIC X(30) USAGE DISPLAY.">
+                            <startPos>289</startPos>
+                            <bytes>30</bytes>
+                            <maxBytes>30</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-STATE" originalName="VRCB10-STATE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS.VRCB10-STATE" srcLine="15 VRCB10-STATE PIC X(30) USAGE DISPLAY.">
+                            <startPos>319</startPos>
+                            <bytes>30</bytes>
+                            <maxBytes>30</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-PINCODE" originalName="VRCB10-PINCODE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS.VRCB10-PINCODE" srcLine="15 VRCB10-PINCODE PIC X(6) USAGE DISPLAY.">
+                            <startPos>349</startPos>
+                            <bytes>6</bytes>
+                            <maxBytes>6</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-COUNTRY" originalName="VRCB10-COUNTRY" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-ADDRESS.VRCB10-COUNTRY" srcLine="15 VRCB10-COUNTRY PIC X(30) USAGE DISPLAY.">
+                            <startPos>355</startPos>
+                            <bytes>30</bytes>
+                            <maxBytes>30</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                    </field>
+                    <field name="VRCB10-CUSTOMER-BANK" originalName="VRCB10-CUSTOMER-BANK" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-BANK" srcLine="10 VRCB10-CUSTOMER-BANK.">
+                        <startPos>385</startPos>
+                        <bytes>5</bytes>
+                        <maxBytes>5</maxBytes>
+                        <applicationDatatype datatype="STRUCT"/>
+                        <field name="VRCB10-HOME-BRANCH" originalName="VRCB10-HOME-BRANCH" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-BANK.VRCB10-HOME-BRANCH" srcLine="15 VRCB10-HOME-BRANCH PIC X(4) USAGE DISPLAY.">
+                            <startPos>385</startPos>
+                            <bytes>4</bytes>
+                            <maxBytes>4</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-STATUS" originalName="VRCB10-STATUS" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-BANK.VRCB10-STATUS" srcLine="15 VRCB10-STATUS PIC X USAGE DISPLAY.">
+                            <startPos>389</startPos>
+                            <bytes>1</bytes>
+                            <maxBytes>1</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                    </field>
+                    <field name="VRCB10-CUSTOMER-AUDIT" originalName="VRCB10-CUSTOMER-AUDIT" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-AUDIT" srcLine="10 VRCB10-CUSTOMER-AUDIT.">
+                        <startPos>390</startPos>
+                        <bytes>36</bytes>
+                        <maxBytes>36</maxBytes>
+                        <applicationDatatype datatype="STRUCT"/>
+                        <field name="VRCB10-CREATED-DATE" originalName="VRCB10-CREATED-DATE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-AUDIT.VRCB10-CREATED-DATE" srcLine="15 VRCB10-CREATED-DATE PIC X(10) USAGE DISPLAY.">
+                            <startPos>390</startPos>
+                            <bytes>10</bytes>
+                            <maxBytes>10</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-CREATED-BY" originalName="VRCB10-CREATED-BY" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-AUDIT.VRCB10-CREATED-BY" srcLine="15 VRCB10-CREATED-BY PIC X(8) USAGE DISPLAY.">
+                            <startPos>400</startPos>
+                            <bytes>8</bytes>
+                            <maxBytes>8</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-LAST-UPD-DATE" originalName="VRCB10-LAST-UPD-DATE" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-AUDIT.VRCB10-LAST-UPD-DATE" srcLine="15 VRCB10-LAST-UPD-DATE PIC X(10) USAGE DISPLAY.">
+                            <startPos>408</startPos>
+                            <bytes>10</bytes>
+                            <maxBytes>10</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                        <field name="VRCB10-LAST-UPD-BY" originalName="VRCB10-LAST-UPD-BY" included="Y" path="VRCB10-COMMAREA.VRCB10-CUSTOMER-RECORD.VRCB10-CUSTOMER-AUDIT.VRCB10-LAST-UPD-BY" srcLine="15 VRCB10-LAST-UPD-BY PIC X(8) USAGE DISPLAY.">
+                            <startPos>418</startPos>
+                            <bytes>8</bytes>
+                            <maxBytes>8</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                    </field>
+                </field>
+                <field name="VRCB10-OPERATION-RESULT" originalName="VRCB10-OPERATION-RESULT" included="Y" path="VRCB10-COMMAREA.VRCB10-OPERATION-RESULT" srcLine="05 VRCB10-OPERATION-RESULT.">
+                    <startPos>426</startPos>
+                    <bytes>65</bytes>
+                    <maxBytes>65</maxBytes>
+                    <applicationDatatype datatype="STRUCT"/>
+                    <field name="VRCB10-RETURN-CODE" originalName="VRCB10-RETURN-CODE" included="Y" path="VRCB10-COMMAREA.VRCB10-OPERATION-RESULT.VRCB10-RETURN-CODE" srcLine="10 VRCB10-RETURN-CODE PIC 9(2) USAGE DISPLAY.">
+                        <startPos>426</startPos>
+                        <bytes>2</bytes>
+                        <maxBytes>2</maxBytes>
+                        <marshaller isSigned="N" isSignLeading="N" isSignSeparate="N" isWCHAROnly="N">
+                            <typeConverter>ZONEDDECIMAL</typeConverter>
+                        </marshaller>
+                        <applicationDatatype datatype="DECIMAL" precision="2" scale="0"/>
+                    </field>
+                    <field name="VRCB10-SEVERITY" originalName="VRCB10-SEVERITY" included="Y" path="VRCB10-COMMAREA.VRCB10-OPERATION-RESULT.VRCB10-SEVERITY" srcLine="10 VRCB10-SEVERITY PIC X USAGE DISPLAY.">
+                        <startPos>428</startPos>
+                        <bytes>1</bytes>
+                        <maxBytes>1</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="VRCB10-ERROR-CODE" originalName="VRCB10-ERROR-CODE" included="Y" path="VRCB10-COMMAREA.VRCB10-OPERATION-RESULT.VRCB10-ERROR-CODE" srcLine="10 VRCB10-ERROR-CODE PIC X(12) USAGE DISPLAY.">
+                        <startPos>429</startPos>
+                        <bytes>12</bytes>
+                        <maxBytes>12</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="VRCB10-RETURN-MESSAGE" originalName="VRCB10-RETURN-MESSAGE" included="Y" path="VRCB10-COMMAREA.VRCB10-OPERATION-RESULT.VRCB10-RETURN-MESSAGE" srcLine="10 VRCB10-RETURN-MESSAGE PIC X(50) USAGE DISPLAY.">
+                        <startPos>441</startPos>
+                        <bytes>50</bytes>
+                        <maxBytes>50</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                </field>
+            </field>
+        </segment>
+    </message>
+</ns2:message>

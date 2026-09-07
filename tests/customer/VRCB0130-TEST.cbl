@@ -49,7 +49,7 @@
 
        1000-MAIN.
 
-           MOVE "1"
+           MOVE "0000000005"
              TO WS-INQUIRY-ID
 
            DISPLAY "========================================"
@@ -87,9 +87,9 @@
 
            IF OPERATION-RETURN-CODE = ZERO
                AND OPERATION-SEVERITY = "S"
-               AND WS-CUSTOMER-ID = "1"
-               AND WS-CUSTOMER-FIRST-NAME = "EXISTING"
-               AND WS-CUSTOMER-LAST-NAME = "CUSTOMER"
+               AND WS-CUSTOMER-ID = "0000000005"
+               AND WS-CUSTOMER-FIRST-NAME = "ARUN-UPDATED"
+               AND WS-CUSTOMER-LAST-NAME = "KUMAR"
                DISPLAY "CUSTOMER INQUIRY PATH : PASS"
            ELSE
                DISPLAY "CUSTOMER INQUIRY PATH : FAIL"

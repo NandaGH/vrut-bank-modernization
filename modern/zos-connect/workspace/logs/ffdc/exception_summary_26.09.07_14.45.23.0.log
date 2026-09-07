@@ -1,0 +1,9 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1   9/7/26, 14:45:23:743 GMT    9/7/26, 14:45:23:743 GMT  java.lang.IllegalArgumentException com.ibm.ws.security.token.ltpa.internal.LTPAConfigurationImpl 151
+                                                                            - /liberty/logs/ffdc/ffdc_26.09.07_14.45.23.0.log
+     1      7   9/7/26, 15:23:42:898 GMT    9/7/26, 16:35:28:465 GMT  java.net.UnknownHostException com.ibm.zosconnect.cics.internal.conn.isc.ConnectionManager 131
+                                                                            - /liberty/logs/ffdc/ffdc_26.09.07_15.30.34.0.log
+                                                                            - /liberty/logs/ffdc/ffdc_26.09.07_15.23.42.0.log
+------+------+---------------------------+---------------------------+---------------------------

@@ -1,0 +1,163 @@
+openapi: 3.0.3
+
+info:
+  title: VRUT Bank Customer API
+  version: 1.0.0
+  description: Customer management API for VRUT Bank modernization
+
+paths:
+
+  /customers:
+    post:
+      operationId: createCustomer
+      summary: Create a new customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+      responses:
+        '201':
+          description: Customer created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '400':
+          description: Invalid customer data
+        '409':
+          description: Customer already exists
+        '500':
+          description: Internal server error
+
+  /customers/{customerId}:
+    parameters:
+      - name: customerId
+        in: path
+        required: true
+        description: Unique customer identifier
+        schema:
+          type: string
+          maxLength: 10
+
+    get:
+      operationId: getCustomer
+      summary: Retrieve a customer
+      responses:
+        '200':
+          description: Customer found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerInquiryResponse'
+        '404':
+          description: Customer not found
+        '500':
+          description: Internal server error
+
+    put:
+      operationId: updateCustomer
+      summary: Update an existing customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+      responses:
+        '200':
+          description: Customer updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '400':
+          description: Invalid customer data
+        '404':
+          description: Customer not found
+        '500':
+          description: Internal server error
+
+components:
+
+  schemas:
+
+    CustomerRequest:
+      type: object
+      required:
+        - firstName
+        - lastName
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        addressLine1:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        pinCode:
+          type: string
+
+    CustomerResponse:
+      type: object
+      properties:
+        customerId:
+          type: string
+        message:
+          type: string
+        returnCode:
+          type: integer
+        severity:
+          type: string
+
+    CustomerInquiryResponse:
+      type: object
+      properties:
+        customerId:
+          type: string
+        customerType:
+          type: string
+        title:
+          type: string
+        firstName:
+          type: string
+        middleName:
+          type: string
+        lastName:
+          type: string
+        gender:
+          type: string
+        dateOfBirth:
+          type: string
+        mobileNumber:
+          type: string
+        emailId:
+          type: string
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        pinCode:
+          type: string
+        country:
+          type: string
+        homeBranch:
+          type: string
+        status:
+          type: string
+        createdDate:
+          type: string
+        createdBy:
+          type: string
+        lastUpdatedDate:
+          type: string
+        lastUpdatedBy:
+          type: string

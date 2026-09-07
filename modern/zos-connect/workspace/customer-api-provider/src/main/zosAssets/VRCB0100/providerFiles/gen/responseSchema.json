@@ -1,0 +1,264 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "abendCode" : {
+      "type" : "string"
+    },
+    "commarea" : {
+      "type" : "object",
+      "properties" : {
+        "VRCB10-COMMAREA" : {
+          "type" : "object",
+          "properties" : {
+            "VRCB10-CUSTOMER-RECORD" : {
+              "type" : "object",
+              "properties" : {
+                "VRCB10-CUSTOMER-IDENTITY" : {
+                  "type" : "object",
+                  "properties" : {
+                    "VRCB10-CUSTOMER-ID" : {
+                      "maxLength" : 10,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-ID PIC X(10) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-ID"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-TYPE" : {
+                      "maxLength" : 2,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-TYPE PIC X(2) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-TYPE"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-TITLE" : {
+                      "maxLength" : 5,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-TITLE PIC X(5) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-TITLE"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-FIRST-NAME" : {
+                      "maxLength" : 30,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-FIRST-NAME PIC X(30) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-FIRST-NAME"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-MIDDLE-NAME" : {
+                      "maxLength" : 30,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-MIDDLE-NAME PIC X(30) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-MIDDLE-NAME"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-LAST-NAME" : {
+                      "maxLength" : 30,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-LAST-NAME PIC X(30) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-LAST-NAME"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-GENDER" : {
+                      "maxLength" : 1,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-GENDER PIC X USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-GENDER"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-DOB" : {
+                      "maxLength" : 10,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-DOB PIC X(10) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-DOB"
+                      }
+                    }
+                  }
+                },
+                "VRCB10-CUSTOMER-CONTACT" : {
+                  "type" : "object",
+                  "properties" : {
+                    "VRCB10-CUSTOMER-MOBILE" : {
+                      "maxLength" : 10,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-MOBILE PIC X(10) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-MOBILE"
+                      }
+                    },
+                    "VRCB10-CUSTOMER-EMAIL" : {
+                      "maxLength" : 60,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CUSTOMER-EMAIL PIC X(60) USAGE DISPLAY.",
+                        "name" : "VRCB10-CUSTOMER-EMAIL"
+                      }
+                    }
+                  }
+                },
+                "VRCB10-CUSTOMER-ADDRESS" : {
+                  "type" : "object",
+                  "properties" : {
+                    "VRCB10-ADDR-LINE-1" : {
+                      "maxLength" : 50,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-ADDR-LINE-1 PIC X(50) USAGE DISPLAY.",
+                        "name" : "VRCB10-ADDR-LINE-1"
+                      }
+                    },
+                    "VRCB10-ADDR-LINE-2" : {
+                      "maxLength" : 50,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-ADDR-LINE-2 PIC X(50) USAGE DISPLAY.",
+                        "name" : "VRCB10-ADDR-LINE-2"
+                      }
+                    },
+                    "VRCB10-CITY" : {
+                      "maxLength" : 30,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CITY PIC X(30) USAGE DISPLAY.",
+                        "name" : "VRCB10-CITY"
+                      }
+                    },
+                    "VRCB10-STATE" : {
+                      "maxLength" : 30,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-STATE PIC X(30) USAGE DISPLAY.",
+                        "name" : "VRCB10-STATE"
+                      }
+                    },
+                    "VRCB10-PINCODE" : {
+                      "maxLength" : 6,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-PINCODE PIC X(6) USAGE DISPLAY.",
+                        "name" : "VRCB10-PINCODE"
+                      }
+                    },
+                    "VRCB10-COUNTRY" : {
+                      "maxLength" : 30,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-COUNTRY PIC X(30) USAGE DISPLAY.",
+                        "name" : "VRCB10-COUNTRY"
+                      }
+                    }
+                  }
+                },
+                "VRCB10-CUSTOMER-BANK" : {
+                  "type" : "object",
+                  "properties" : {
+                    "VRCB10-HOME-BRANCH" : {
+                      "maxLength" : 4,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-HOME-BRANCH PIC X(4) USAGE DISPLAY.",
+                        "name" : "VRCB10-HOME-BRANCH"
+                      }
+                    },
+                    "VRCB10-STATUS" : {
+                      "maxLength" : 1,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-STATUS PIC X USAGE DISPLAY.",
+                        "name" : "VRCB10-STATUS"
+                      }
+                    }
+                  }
+                },
+                "VRCB10-CUSTOMER-AUDIT" : {
+                  "type" : "object",
+                  "properties" : {
+                    "VRCB10-CREATED-DATE" : {
+                      "maxLength" : 10,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CREATED-DATE PIC X(10) USAGE DISPLAY.",
+                        "name" : "VRCB10-CREATED-DATE"
+                      }
+                    },
+                    "VRCB10-CREATED-BY" : {
+                      "maxLength" : 8,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-CREATED-BY PIC X(8) USAGE DISPLAY.",
+                        "name" : "VRCB10-CREATED-BY"
+                      }
+                    },
+                    "VRCB10-LAST-UPD-DATE" : {
+                      "maxLength" : 10,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-LAST-UPD-DATE PIC X(10) USAGE DISPLAY.",
+                        "name" : "VRCB10-LAST-UPD-DATE"
+                      }
+                    },
+                    "VRCB10-LAST-UPD-BY" : {
+                      "maxLength" : 8,
+                      "type" : "string",
+                      "x-ibm-zcon-metadata" : {
+                        "type" : "15 VRCB10-LAST-UPD-BY PIC X(8) USAGE DISPLAY.",
+                        "name" : "VRCB10-LAST-UPD-BY"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "VRCB10-OPERATION-RESULT" : {
+              "type" : "object",
+              "properties" : {
+                "VRCB10-RETURN-CODE" : {
+                  "minimum" : 0,
+                  "maximum" : 99,
+                  "type" : "integer",
+                  "x-ibm-zcon-metadata" : {
+                    "type" : "10 VRCB10-RETURN-CODE PIC 9(2) USAGE DISPLAY.",
+                    "name" : "VRCB10-RETURN-CODE"
+                  }
+                },
+                "VRCB10-SEVERITY" : {
+                  "maxLength" : 1,
+                  "type" : "string",
+                  "x-ibm-zcon-metadata" : {
+                    "type" : "10 VRCB10-SEVERITY PIC X USAGE DISPLAY.",
+                    "name" : "VRCB10-SEVERITY"
+                  }
+                },
+                "VRCB10-ERROR-CODE" : {
+                  "maxLength" : 12,
+                  "type" : "string",
+                  "x-ibm-zcon-metadata" : {
+                    "type" : "10 VRCB10-ERROR-CODE PIC X(12) USAGE DISPLAY.",
+                    "name" : "VRCB10-ERROR-CODE"
+                  }
+                },
+                "VRCB10-RETURN-MESSAGE" : {
+                  "maxLength" : 50,
+                  "type" : "string",
+                  "x-ibm-zcon-metadata" : {
+                    "type" : "10 VRCB10-RETURN-MESSAGE PIC X(50) USAGE DISPLAY.",
+                    "name" : "VRCB10-RETURN-MESSAGE"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "description" : "General wrapper for CICS COMMAREA z/OS Asset responses"
+}

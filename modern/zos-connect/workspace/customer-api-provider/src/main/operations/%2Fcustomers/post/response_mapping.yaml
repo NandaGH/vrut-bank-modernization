@@ -1,0 +1,17 @@
+---
+version: "1.0"
+response_201.yaml:
+  condition: "$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-OPERATION-RESULT\"\
+    .\"VRCB10-RETURN-CODE\" = 0"
+  httpStatusCode: 201
+response_400.yaml:
+  condition: "$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-OPERATION-RESULT\"\
+    .\"VRCB10-ERROR-CODE\" = 'VR-CUST-004'"
+  httpStatusCode: 400
+response_409.yaml:
+  condition: "$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-OPERATION-RESULT\"\
+    .\"VRCB10-ERROR-CODE\" = 'VR-CUST-002'"
+  httpStatusCode: 409
+response_500.yaml:
+  condition: true
+  httpStatusCode: 500

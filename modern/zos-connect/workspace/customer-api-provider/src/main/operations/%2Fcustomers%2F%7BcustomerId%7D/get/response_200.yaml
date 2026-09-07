@@ -1,0 +1,115 @@
+---
+version: "1.2"
+mappings:
+- body:
+    mappings:
+    - customerId:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-ID\"}}"
+    - customerType:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-TYPE\"}}"
+    - title:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-TITLE\"}}"
+    - firstName:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-FIRST-NAME\"}}"
+    - middleName:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-MIDDLE-NAME\"}}"
+    - lastName:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-LAST-NAME\"}}"
+    - gender:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-GENDER\"}}"
+    - dateOfBirth:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-IDENTITY\".\"VRCB0130-CUSTOMER-DATE-OF-BIRT\"}}"
+    - mobileNumber:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-CONTACT\".\"VRCB0130-CUSTOMER-MOBILE-NUMBE\"}}"
+    - emailId:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-CONTACT\".\"VRCB0130-CUSTOMER-EMAIL-ID\"}}"
+    - addressLine1:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-ADDRESS\".\"VRCB0130-CUSTOMER-ADDRESS-LINE\"}}"
+    - addressLine2:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-ADDRESS\".\"VRCB0130-CUSTOMER-ADDRESS-LINE\"}}"
+    - city:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-ADDRESS\".\"VRCB0130-CUSTOMER-CITY\"}}"
+    - state:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-ADDRESS\".\"VRCB0130-CUSTOMER-STATE\"}}"
+    - pinCode:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-ADDRESS\".\"VRCB0130-CUSTOMER-PINCODE\"}}"
+    - country:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-ADDRESS\".\"VRCB0130-CUSTOMER-COUNTRY\"}}"
+    - homeBranch:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-BANK\".\"VRCB0130-CUSTOMER-HOME-BRANCH\"}}"
+    - status:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-BANK\".\"VRCB0130-CUSTOMER-STATUS\"}}"
+    - createdDate:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-AUDIT\".\"VRCB0130-CUSTOMER-CREATED-DATE\"}}"
+    - createdBy:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-AUDIT\".\"VRCB0130-CUSTOMER-CREATED-BY\"}}"
+    - lastUpdatedDate:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-AUDIT\".\"VRCB0130-CUSTOMER-LAST-UPD-DAT\"}}"
+    - lastUpdatedBy:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB0130-COMMAREA\".\"VRCB0130-CUSTOMER-RECORD\"\
+          .\"VRCB0130-CUSTOMER-AUDIT\".\"VRCB0130-CUSTOMER-LAST-UPD-BY\"}}"

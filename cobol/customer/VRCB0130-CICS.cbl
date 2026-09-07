@@ -1,34 +1,34 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. VRCB0100-CICS.
+       PROGRAM-ID. VRCB0130-CICS.
 
       *****************************************************************
       * PROJECT      : Project Phoenix
       * CLIENT       : VRUT Bank
-      * PROGRAM      : VRCB0100-CICS
-      * DESCRIPTION  : CICS Customer Add / Update Entry Point
+      * PROGRAM      : VRCB0130-CICS
+      * DESCRIPTION  : CICS wrapper for customer inquiry
       *
       * PURPOSE
-      *    Receive a CICS customer request and invoke VRCB0100.
+      *    Expose the existing VRCB0130 customer inquiry program
+      *    through a CICS COMMAREA interface.
       *
-      *    VRCB0100 supports both:
-      *      - Customer Add when customer ID is blank
-      *      - Customer Update when customer ID is supplied
-      *
-      * NOTE
-      *    This source requires a CICS/Enterprise COBOL environment.
-      *    It is intentionally excluded from the local GnuCOBOL build.
+      * CICS COMMAREA
+      *    INQUIRY-ID
+      *    CUSTOMER-RECORD
+      *    OPERATION-RESULT
       *****************************************************************
 
        DATA DIVISION.
 
        WORKING-STORAGE SECTION.
 
-       01 WS-VRCB0100-COMMAREA.
+       01 WS-VRCB0130-COMMAREA.
+
+           05 WS-INQUIRY-ID
+              PIC X(10).
 
            COPY VRCP0101
                REPLACING
-                   ==01 CP-CUSTOMER-RECORD.==
-                       BY ==05 WS-CUSTOMER-RECORD.==
+                   CP-CUSTOMER-RECORD BY WS-CUSTOMER-RECORD
                    CP-CUSTOMER-IDENTITY BY WS-CUSTOMER-IDENTITY
                    CP-CUSTOMER-ID BY WS-CUSTOMER-ID
                    CP-CUSTOMER-TYPE BY WS-CUSTOMER-TYPE
@@ -64,17 +64,14 @@
 
            COPY VRCP9003
                REPLACING
-                   ==01 OPERATION-RESULT.==
-                       BY ==05 WS-OPERATION-RESULT.==.
+                   OPERATION-RESULT BY WS-OPERATION-RESULT.
 
        PROCEDURE DIVISION.
 
-       1000-MAIN.
-
            EXEC CICS
-               LINK PROGRAM("VRCB0100")
-                    COMMAREA(WS-VRCB0100-COMMAREA)
-                    LENGTH(LENGTH OF WS-VRCB0100-COMMAREA)
+               LINK PROGRAM("VRCB0130")
+                    COMMAREA(WS-VRCB0130-COMMAREA)
+                    LENGTH(LENGTH OF WS-VRCB0130-COMMAREA)
            END-EXEC
 
            EXEC CICS

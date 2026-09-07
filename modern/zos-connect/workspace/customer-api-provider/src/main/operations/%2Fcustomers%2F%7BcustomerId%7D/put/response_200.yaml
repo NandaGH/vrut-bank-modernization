@@ -1,0 +1,25 @@
+---
+version: "1.2"
+mappings:
+- body:
+    mappings:
+    - customerId:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-CUSTOMER-RECORD\"\
+          .\"VRCB10-CUSTOMER-IDENTITY\".\"VRCB10-CUSTOMER-ID\"}}"
+    - message:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-OPERATION-RESULT\"\
+          .\"VRCB10-RETURN-MESSAGE\"}}"
+    - returnCode:
+        required: false
+        nullable: false
+        expression: "$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-OPERATION-RESULT\"\
+          .\"VRCB10-RETURN-CODE\""
+    - severity:
+        required: false
+        nullable: false
+        template: "{{$zosAssetResponse.commarea.\"VRCB10-COMMAREA\".\"VRCB10-OPERATION-RESULT\"\
+          .\"VRCB10-SEVERITY\"}}"
