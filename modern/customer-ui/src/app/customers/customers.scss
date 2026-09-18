@@ -1,0 +1,267 @@
+.customers-page {
+  padding: 38px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.customers-page .page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.customers-page .eyebrow {
+  color: #738096;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.customers-page h1 {
+  margin: 7px 0 0;
+  font-size: 32px;
+  letter-spacing: -0.025em;
+}
+
+.customers-page .page-heading p {
+  margin-top: 9px;
+  color: #788397;
+  font-size: 13px;
+}
+
+.customers-page .primary-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: #172033;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.customers-page .primary-button span {
+  margin-right: 6px;
+  font-size: 17px;
+}
+
+.search-panel,
+.customer-list-panel {
+  background: #fff;
+  border: 1px solid #e7eaf0;
+  border-radius: 12px;
+}
+
+.search-panel {
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.search-label strong,
+.search-label span {
+  display: block;
+}
+
+.search-label strong {
+  color: #263247;
+  font-size: 13px;
+}
+
+.search-label span {
+  margin-top: 5px;
+  color: #9099a7;
+  font-size: 10px;
+}
+
+.search-controls {
+  display: flex;
+  gap: 8px;
+  width: min(500px, 100%);
+}
+
+.search-controls input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #dfe3e9;
+  border-radius: 7px;
+  padding: 11px 13px;
+  outline: none;
+  color: #263247;
+  font-size: 11px;
+}
+
+.search-controls input:focus {
+  border-color: #8793a5;
+}
+
+.search-button {
+  border: 0;
+  border-radius: 7px;
+  padding: 0 18px;
+  background: #172033;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.customer-list-panel {
+  overflow: hidden;
+}
+
+.customer-list-panel .panel-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.customer-list-panel .panel-header h2 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.customer-list-panel .panel-header p {
+  margin: 4px 0 0;
+  color: #8a93a2;
+  font-size: 10px;
+}
+
+.customer-table {
+  overflow-x: auto;
+}
+
+.customer-table .table-header,
+.customer-table .table-row {
+  min-width: 720px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.8fr 0.7fr;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 24px;
+}
+
+.customer-table .table-header {
+  background: #fafbfc;
+  color: #929baa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.customer-table .table-row {
+  min-height: 70px;
+  border-top: 1px solid #edf0f4;
+  color: #647084;
+  font-size: 11px;
+}
+
+.customer-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #eef1f5;
+  color: #46536a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.customer-cell strong,
+.customer-cell span {
+  display: block;
+}
+
+.customer-cell strong {
+  color: #263247;
+  font-size: 11px;
+}
+
+.customer-cell span {
+  margin-top: 3px;
+  color: #9aa2af;
+  font-size: 9px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border-radius: 20px;
+  background: #edf8f2;
+  color: #32845b;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.status-badge.inactive {
+  background: #f2f3f5;
+  color: #777f8c;
+}
+
+.badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.view-button {
+  border: 0;
+  background: transparent;
+  color: #4e6078;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.empty-state {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-state strong,
+.empty-state span {
+  display: block;
+}
+
+.empty-state strong {
+  color: #263247;
+  font-size: 13px;
+}
+
+.empty-state span {
+  margin-top: 6px;
+  color: #9099a7;
+  font-size: 10px;
+}
+
+@media (max-width: 800px) {
+  .customers-page {
+    padding: 24px 18px;
+  }
+
+  .customers-page .page-heading,
+  .search-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-controls {
+    width: 100%;
+  }
+}

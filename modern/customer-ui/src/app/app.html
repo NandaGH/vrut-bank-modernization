@@ -1,0 +1,66 @@
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">V</div>
+      <div>
+        <div class="brand-name">VRUT</div>
+        <div class="brand-subtitle">BANK</div>
+      </div>
+    </div>
+
+    <nav class="navigation">
+      <div class="nav-label">MAIN MENU</div>
+
+      <a
+        class="nav-item"
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <span class="nav-icon">⌂</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a
+        class="nav-item"
+        routerLink="/customers"
+        routerLinkActive="active">
+        <span class="nav-icon">♙</span>
+        <span>Customers</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <div>
+          <strong>System Online</strong>
+          <span>All services operational</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <span class="breadcrumb">VRUT BANK</span>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Customer Management</span>
+      </div>
+
+      <div class="user-area">
+        <div class="notification">♢</div>
+        <div class="user-avatar">NK</div>
+        <div class="user-info">
+          <strong>Bank Operations</strong>
+          <span>Administrator</span>
+        </div>
+      </div>
+    </header>
+
+    <router-outlet></router-outlet>
+
+  </main>
+</div>

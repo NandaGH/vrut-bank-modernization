@@ -1,0 +1,203 @@
+@if (customer) {
+  <section class="details-page">
+    <div class="page-header">
+      <div>
+        <div class="eyebrow">CUSTOMER DETAILS</div>
+        <h1>{{ customer.firstName }} {{ customer.lastName }}</h1>
+        <p>Customer profile and banking information.</p>
+      </div>
+
+      <div class="header-actions">
+        <button class="secondary-button" type="button" (click)="goBack()">
+          ← Back to Customers
+        </button>
+        <button class="primary-button" type="button" (click)="updateCustomer()">
+          Update Customer
+        </button>
+      </div>
+    </div>
+
+    <div class="profile-banner">
+      <div class="avatar">
+        {{ customer.firstName.charAt(0) }}
+      </div>
+
+      <div class="profile-main">
+        <div class="profile-name">
+          {{ customer.title }} {{ customer.firstName }} {{ customer.lastName }}
+        </div>
+        <div class="profile-id">Customer ID: {{ customer.id }}</div>
+      </div>
+
+      <div class="status-badge" [class.inactive]="customer.status !== 'Active'">
+        <span></span>
+        {{ customer.status }}
+      </div>
+    </div>
+
+    <div class="details-grid">
+      <article class="details-card">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">PROFILE</span>
+            <h2>Personal Information</h2>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <span>Customer ID</span>
+            <strong>{{ customer.id }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Customer Type</span>
+            <strong>{{ customer.customerType }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Title</span>
+            <strong>{{ customer.title }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Gender</span>
+            <strong>{{ customer.gender }}</strong>
+          </div>
+
+          <div class="field">
+            <span>First Name</span>
+            <strong>{{ customer.firstName }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Last Name</span>
+            <strong>{{ customer.lastName }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Date of Birth</span>
+            <strong>{{ customer.dateOfBirth }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Home Branch</span>
+            <strong>{{ customer.homeBranch }}</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="details-card">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">CONTACT</span>
+            <h2>Contact Information</h2>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <span>Mobile Number</span>
+            <strong>{{ customer.mobile }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Email Address</span>
+            <strong>{{ customer.email }}</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="details-card full-width">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">ADDRESS</span>
+            <h2>Residential Address</h2>
+          </div>
+        </div>
+
+        <div class="field-grid address-grid">
+          <div class="field wide">
+            <span>Address Line 1</span>
+            <strong>{{ customer.addressLine1 }}</strong>
+          </div>
+
+          <div class="field wide">
+            <span>Address Line 2</span>
+            <strong>{{ customer.addressLine2 || 'Not provided' }}</strong>
+          </div>
+
+          <div class="field">
+            <span>City</span>
+            <strong>{{ customer.city }}</strong>
+          </div>
+
+          <div class="field">
+            <span>State</span>
+            <strong>{{ customer.state }}</strong>
+          </div>
+
+          <div class="field">
+            <span>PIN Code</span>
+            <strong>{{ customer.pinCode }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Country</span>
+            <strong>{{ customer.country }}</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="details-card full-width">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">AUDIT</span>
+            <h2>Record Information</h2>
+          </div>
+        </div>
+
+        <div class="field-grid audit-grid">
+          <div class="field">
+            <span>Created Date</span>
+            <strong>{{ customer.createdDate }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Created By</span>
+            <strong>{{ customer.createdBy }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Last Updated</span>
+            <strong>{{ customer.lastUpdatedDate }}</strong>
+          </div>
+
+          <div class="field">
+            <span>Last Updated By</span>
+            <strong>{{ customer.lastUpdatedBy }}</strong>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+} @else if (loading) {
+  <section class="not-found">
+    <div class="not-found-card">
+      <div class="not-found-icon">...</div>
+      <h1>Loading Customer</h1>
+      <p>Retrieving customer information.</p>
+    </div>
+  </section>
+} @else {
+  <section class="not-found">
+    <div class="not-found-card">
+      <div class="not-found-icon">?</div>
+      <h1>Customer Not Found</h1>
+      <p>{{ errorMessage || 'The requested customer record could not be found.' }}</p>
+      <button class="primary-button" type="button" (click)="goBack()">
+        Back to Customers
+      </button>
+    </div>
+  </section>
+}

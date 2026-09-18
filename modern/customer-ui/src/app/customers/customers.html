@@ -1,0 +1,102 @@
+<section class="customers-page">
+
+  <div class="page-heading">
+    <div>
+      <span class="eyebrow">CUSTOMER MANAGEMENT</span>
+      <h1>Customers</h1>
+      <p>Search, view and manage customer records.</p>
+    </div>
+
+    <button
+      class="primary-button"
+      type="button"
+      (click)="addCustomer()">
+      <span>+</span>
+      Add Customer
+    </button>
+  </div>
+
+  <section class="search-panel">
+    <div class="search-label">
+      <strong>Find a customer</strong>
+      <span>Search by customer ID or customer name</span>
+    </div>
+
+    <div class="search-controls">
+      <input
+        type="text"
+        [(ngModel)]="searchId"
+        placeholder="Enter customer ID or name"
+        aria-label="Customer search"
+      />
+
+      <button class="search-button" type="button">
+        Search
+      </button>
+    </div>
+  </section>
+
+  <section class="customer-list-panel">
+
+    <div class="panel-header">
+      <div>
+        <h2>Customer Records</h2>
+        <p>{{ filteredCustomers().length }} customer records found</p>
+      </div>
+    </div>
+
+    <div class="customer-table">
+
+      <div class="table-header">
+        <span>Customer</span>
+        <span>Location</span>
+        <span>Status</span>
+        <span>Action</span>
+      </div>
+
+      @for (customer of filteredCustomers(); track customer.id) {
+        <div class="table-row">
+
+          <div class="customer-cell">
+            <div class="customer-avatar">
+              {{ customer.firstName.charAt(0) }}
+            </div>
+
+            <div>
+              <strong>{{ customer.firstName }} {{ customer.lastName }}</strong>
+              <span>{{ customer.id }}</span>
+            </div>
+          </div>
+
+          <span>{{ customer.city }}, {{ customer.state }}</span>
+
+          <span>
+            <span
+              class="status-badge"
+              [class.inactive]="customer.status === 'Inactive'">
+              <span class="badge-dot"></span>
+              {{ customer.status }}
+            </span>
+          </span>
+
+          <button
+            class="view-button"
+            type="button"
+            (click)="viewCustomer(customer.id)">
+            View →
+          </button>
+
+        </div>
+      }
+
+      @if (filteredCustomers().length === 0) {
+        <div class="empty-state">
+          <strong>No customers found</strong>
+          <span>Try another customer ID or name.</span>
+        </div>
+      }
+
+    </div>
+  </section>
+
+</section>

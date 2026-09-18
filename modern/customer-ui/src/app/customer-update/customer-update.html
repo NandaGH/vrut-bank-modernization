@@ -1,0 +1,264 @@
+@if (customer) {
+  <section class="update-page">
+    <div class="page-header">
+      <div>
+        <div class="eyebrow">CUSTOMER MANAGEMENT</div>
+        <h1>Update Customer</h1>
+        <p>Modify customer information and maintain the banking record.</p>
+      </div>
+
+      <div class="customer-reference">
+        <span>Customer ID</span>
+        <strong>{{ customer.id }}</strong>
+      </div>
+    </div>
+
+    @if (saved) {
+      <div class="success-banner">
+        <div class="success-icon">✓</div>
+
+        <div class="success-message">
+          <strong>Customer changes saved</strong>
+          <span>The customer record has been successfully updated.</span>
+        </div>
+
+        <button
+          class="success-back-button"
+          type="button"
+          (click)="backToDetails()">
+          Back to Customer Details →
+        </button>
+      </div>
+    }
+
+    <form class="update-form" (ngSubmit)="saveChanges()">
+      <article class="form-card">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">PROFILE</span>
+            <h2>Personal Information</h2>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="title">Title</label>
+            <select id="title" name="title" [(ngModel)]="customer.title">
+              <option value="MR">Mr</option>
+              <option value="MS">Ms</option>
+              <option value="MRS">Mrs</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="customerType">Customer Type</label>
+            <select
+              id="customerType"
+              name="customerType"
+              [(ngModel)]="customer.customerType"
+            >
+              <option value="IN">Individual</option>
+              <option value="CO">Corporate</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="firstName">First Name</label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              [(ngModel)]="customer.firstName"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="lastName">Last Name</label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              [(ngModel)]="customer.lastName"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" [(ngModel)]="customer.gender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input
+              id="dateOfBirth"
+              name="dateOfBirth"
+              type="date"
+              [(ngModel)]="customer.dateOfBirth"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="form-card">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">CONTACT</span>
+            <h2>Contact Information</h2>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="mobile">Mobile Number</label>
+            <input
+              id="mobile"
+              name="mobile"
+              type="tel"
+              [(ngModel)]="customer.mobile"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              [(ngModel)]="customer.email"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="form-card full-width">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">ADDRESS</span>
+            <h2>Residential Address</h2>
+          </div>
+        </div>
+
+        <div class="form-grid address-form-grid">
+          <div class="form-field span-two">
+            <label for="addressLine1">Address Line 1</label>
+            <input
+              id="addressLine1"
+              name="addressLine1"
+              type="text"
+              [(ngModel)]="customer.addressLine1"
+            />
+          </div>
+
+          <div class="form-field span-two">
+            <label for="addressLine2">Address Line 2</label>
+            <input
+              id="addressLine2"
+              name="addressLine2"
+              type="text"
+              [(ngModel)]="customer.addressLine2"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="city">City</label>
+            <input
+              id="city"
+              name="city"
+              type="text"
+              [(ngModel)]="customer.city"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="state">State</label>
+            <input
+              id="state"
+              name="state"
+              type="text"
+              [(ngModel)]="customer.state"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="pinCode">PIN Code</label>
+            <input
+              id="pinCode"
+              name="pinCode"
+              type="text"
+              [(ngModel)]="customer.pinCode"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="country">Country</label>
+            <input
+              id="country"
+              name="country"
+              type="text"
+              [(ngModel)]="customer.country"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="form-card">
+        <div class="card-heading">
+          <div>
+            <span class="card-label">BANKING</span>
+            <h2>Banking Information</h2>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="homeBranch">Home Branch</label>
+            <input
+              id="homeBranch"
+              name="homeBranch"
+              type="text"
+              [(ngModel)]="customer.homeBranch"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="status">Customer Status</label>
+            <select id="status" name="status" [(ngModel)]="customer.status">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Dormant">Dormant</option>
+              <option value="Blocked">Blocked</option>
+              <option value="Closed">Closed</option>
+            </select>
+          </div>
+        </div>
+      </article>
+
+      <div class="form-actions">
+        <button class="secondary-button" type="button" (click)="cancel()">
+          Cancel
+        </button>
+
+        <button class="primary-button" type="submit">
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </section>
+} @else {
+  <section class="not-found">
+    <div class="not-found-card">
+      <div class="not-found-icon">?</div>
+      <h1>Customer Not Found</h1>
+      <p>The requested customer record could not be found.</p>
+      <button class="primary-button" type="button" (click)="cancel()">
+        Back to Customers
+      </button>
+    </div>
+  </section>
+}
